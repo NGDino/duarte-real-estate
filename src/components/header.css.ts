@@ -6,7 +6,7 @@ export const desktopHeaderNavWrapper = style({
   position: "relative",
   zIndex: 1,
   display: "none",
-  padding: ".5em",
+  padding: ".6em",
   backgroundColor: theme.colors.navBackground,
   width: "100%",
   "@media": {

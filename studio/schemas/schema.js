@@ -31,7 +31,6 @@ import layout from "./layout"
 import page from "./page"
 
 import meetTheTeam from "./meetTheTeam"
-import teamHero from "./meetTeamHero"
 import teamProfile from "./teamProfile"
 import teamLeadership from "./teamLeadership"
 
@@ -40,7 +39,8 @@ import neighborhoodsPage from "./neighborhoodsPage"
 // import neighborhood from "./neighborhood"
 import neighborhoodsHero from "./neighborhoodsHero"
 
-import properyManagementPage from "./properyManagementPage"
+import propertyManagmentPage from "./propertyManagmentPage"
+
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -50,6 +50,8 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   //has everything 
   types: schemaTypes.concat([
+
+    //not these
     homepage,
     imageType,
     homepageLink,
@@ -62,24 +64,18 @@ export default createSchema({
     homepageTestimonialList,
     heroContactCard,
     titleWithText,
-    // layout
     navItem,
     navItemGroup,
     socialLink,
     layoutHeader,
     layoutFooter,
     layout,
-    // HTML page
     page,
-    // about page
     meetTheTeam,
-    teamHero,
     teamProfile,
     teamLeadership,
     neighborhoodsPage,
-    // neighborhoods,
-    // neighborhood,
     neighborhoodsHero,
-    properyManagementPage
+    propertyManagmentPage
   ]),
 })

@@ -2,12 +2,13 @@ import { style, styleVariants } from "@vanilla-extract/css"
 import { calc } from "@vanilla-extract/css-utils"
 import { theme } from "../theme.css"
 
-const breakpoints = ["40em", "52em", "64em"]
+const breakpoints = ["40em", "55em", "64em"]
 
 export const media = {
   small: `screen and (min-width: ${breakpoints[0]})`,
   medium: `screen and (min-width: ${breakpoints[1]})`,
   large: `screen and (min-width: ${breakpoints[2]})`,
+  infoCard: `screen and (max-width: '770px'`
 }
 
 export const container = style({
@@ -60,6 +61,9 @@ export const containers: Record<Containers, string> = styleVariants({
     },
   ],
 })
+export const listStyle = style({
+  listStyle: 'none'
+})
 
 export const flex = style({
   display: "flex",
@@ -107,9 +111,10 @@ export const flexVariants: Record<FlexVariants, string> = styleVariants({
     justifyContent: "space-between",
   },
   center: {
-    width: "100%",
+    // width: "100%",
     flexWrap: "wrap",
     justifyContent: "center",
+    alignItems: "center"
   },
   responsive: {
     flexDirection: "column",
@@ -136,7 +141,7 @@ export const widths: Record<Widths, string> = styleVariants(
     full: "100%",
     half: "50%",
     quarter: "25%",
-    third: "33.3333%",
+    third: "30%",
     twothirds: "33.3333%",
     fitContent: "fit-content",
   },
@@ -152,16 +157,21 @@ export const widths: Record<Widths, string> = styleVariants(
   ]
 )
 
+export const cardContainer = style({
+  display: 'table',
+  borderSpacing: '10px'
+})
+
 export const gradient = style({
-  backgroundImage: `linear-gradient(to top, #808080, rgba(255, 255, 255,0.9))`,
+  backgroundImage: `linear-gradient(to top, #302f2f, #5A5A5A)`,
   backgroundSize: 'cover',
   width: '100%',
   height: '100%',
   position: 'absolute',
-  zIndex: 0,
+  zIndex: -1,
   top: 0,
   left: 0,
-  opacity: 0.6,
+  opacity: 0.7,
 })
 export const list = style({
   listStyle: "none",
@@ -199,6 +209,7 @@ export const box = styleVariants({
   center: {
     display: "flex",
     flexDirection: "column",
+    justifyContent:'center',
     alignItems: "center",
     textAlign: "center",
   },
@@ -257,6 +268,18 @@ export const marginBottom = styleVariants(
 
 export const margin0 = style({ margin: 0 })
 
+export const colors = styleVariants({
+  white: [{
+    color: theme.colors.white
+  }],
+  black: [{
+    color: theme.colors.black
+  }],
+  gray: [{
+    color: theme.colors.gray
+  }]
+})
+
 export type TextVariants =
   | "body"
   | "lead"
@@ -273,6 +296,7 @@ export type TextVariants =
   | "mega"
   | "center"
   | "bold"
+
 
 export const text: Record<TextVariants, string> = styleVariants({
   body: [
@@ -399,6 +423,7 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       fontSize: theme.fontSizes[3],
+      color: theme.colors.white
     },
   ],
   mega: [
@@ -546,12 +571,17 @@ export const buttons: Record<ButtonVariants, string> = styleVariants({
   ],
 })
 
-export type Backgrounds = "primary" | "muted"
+export type Backgrounds = "primary" | "muted" | "black";
 
 export const backgrounds: Record<Backgrounds, string> = styleVariants({
   primary: {
     color: theme.colors.background,
     backgroundColor: theme.colors.primary,
+  },
+  black: {
+    color: theme.colors.primary,
+    backgroundColor: theme.colors.primary,
+    // border: theme.border.card,
   },
   muted: {
     color: theme.colors.primary,
@@ -559,6 +589,51 @@ export const backgrounds: Record<Backgrounds, string> = styleVariants({
   },
 })
 
+export const fullHeight = style({
+  height: '100vh',
+  "@media": {
+    [media.medium]: {
+      minHeight: '100vh'
+    }
+  }
+})
+
+export const infoCard = style ({
+  display: "block",
+  // width: '100%',
+  // margin: '5px',
+  "@media": {
+    [media.small]: {
+      borderStyle: 'solid',
+      display: 'table-cell',
+    
+    }
+  }
+})
+
+export const card: any = style ({
+  width: '50%',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  height: '100vh',
+  padding: theme.space[3],
+  opacity: '.8',
+  justifyContent: 'center',
+  "@media": {
+    [media.medium]: {
+      display: "block",
+      width: '100%',
+      paddingLeft: theme.space[4],
+      paddingRight: theme.space[4],
+      paddingTop: theme.space[5],
+      paddingBottom: theme.space[5],
+    }
+  }
+})
+
+export const heroBox = style({
+  height: '100vh',
+})
 
 
 export const blockquote = style({
@@ -575,6 +650,7 @@ export const avatar = style({
   width: theme.sizes.avatar,
   height: theme.sizes.avatar,
   borderRadius: theme.radii.circle,
+
 })
 
 export type LogoSizes = "small" | "medium"
@@ -593,7 +669,7 @@ export type IconSizes = "small" | "medium" | "large"
 
 export const icons: Record<IconSizes, string> = styleVariants(
   {
-    small: "24px",
+    small: ".8rem",
     medium: "32px",
     large: "64px",
   },

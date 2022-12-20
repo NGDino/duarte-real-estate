@@ -6,7 +6,8 @@ import Fallback from "../components/fallback"
 
 export default function Homepage(props) {
   const { homepage } = props.data
-  console.log('home page', homepage)
+  console.log("home page", homepage)
+  
 
   return (
     <Layout {...homepage}>
@@ -15,6 +16,7 @@ export default function Homepage(props) {
         const Component = sections[blocktype] || Fallback
         return <Component key={id} {...componentProps} />
       })}
+      
     </Layout>
   )
 }
@@ -33,12 +35,13 @@ export const query = graphql`
         id
         blocktype
         ...HomepageHeroContent
-        ...HomepageTestimonialListContent
         ...ServicesListContent
+        ...HomepageTestimonialListContent
         ...SideBySideComponentContent
+        ...TitleWithTextContent
       }
     }
   }
 `
-// ...ServicesListContent
-// ...SideBySideListContent
+
+//

@@ -6,42 +6,46 @@ import {
   FlexList,
   Box,
   Icon,
+  InfoCard,
   Heading,
   Text,
   Space,
-} from "./ui"
+  Flex,
+} from "./ui";
+import * as styles from "./ui.css.ts"
 
-// function Benefit(props) {
-//   return (
-//     <Box as="li" width="third" padding={4} paddingY={3}>
-//       {props.image && (
-//         <Icon
-//           alt={props.image.alt}
-//           image={props.image.gatsbyImageData}
-//           size="small"
-//         />
-//       )}
-//       <Space size={2} />
-//       <Heading variant="subheadSmall">{props.heading}</Heading>
-//       <Text>{props.text}</Text>
-//     </Box>
-//   )
-// }
+function Benefit(props) {
+  return (
+
+        <InfoCard width="third" radius= "large" padding= {3} paddingY= {4} center>
+          {/* <Icon size="medium" image /> */}
+
+          <Icon alt="buying icon" image={props.image.gatsbyImageData}  size="large"/>
+          <Text variant="subheadSmall" bold>
+            {props.heading}
+          </Text>
+          <Text variant="lead">{props.kicker}</Text>
+          <Text variant="body">{props.text}</Text>
+        </InfoCard>
+  )
+}
 
 export default function BenefitList(props) {
   return (
     <Section>
-      <Container>
+      <Container width="narrow">
         <Box center>
           {props.heading && <Heading>{props.heading}</Heading>}
           {props.text && <Text variant="lead">{props.text}</Text>}
         </Box>
         <Space size={3} />
-        <FlexList gutter={3} variant="start" responsive wrap>
-          {/* {props.content.map((benefit) => (
+        <Box>
+        <FlexList gap={3} variant="center" responsive wrap className ={styles.cardContainer}>
+          {props.content.map((benefit) => (
             <Benefit key={benefit.id} {...benefit} />
-          ))} */}
+          ))}
         </FlexList>
+        </Box>
       </Container>
     </Section>
   )

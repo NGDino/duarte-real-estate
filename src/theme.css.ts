@@ -6,9 +6,9 @@ export type Space = Record<SpaceTokens, string>
 
 const space = {
   0: "0",
-  1: "4px",
-  2: "8px",
-  3: "16px",
+  1: ".1em",
+  2: ".3em",
+  3: ".5em",
   4: "32px",
   5: "64px",
   6: "128px",
@@ -27,14 +27,14 @@ Object.assign(
 )
 
 const fontSizes = {
-  0: "12px",
-  1: "14px",
-  2: "16px",
-  3: "18px",
-  4: "24px",
-  5: "32px",
-  6: "48px",
-  7: "64px",
+  0: ".8em",
+  1: "1em",
+  2: "1.1em",
+  3: "1.2em",
+  4: "1.3em",
+  5: "1.4em",
+  6: "1.5em",
+  7: "1.8em",
 }
 
 const fontWeights = {
@@ -66,14 +66,18 @@ const letterSpacings = {
 
 const sizes = {
   container: "100%",
-  narrow: "1024px",
-  wide: "100%",
+  narrow: "80%",
+  wide: "100vw",
   tight: "848px",
-  avatar: "48px",
+  avatar: "7em",
   navGroupBoxMin: "300px",
   navGroupBoxMax: "400px",
   navIcon: "32px",
   navIconSmall: "30px",
+}
+
+const border = {
+  card: `8px solid red ${colors.border}`
 }
 
 export type Radii = "button" | "large" | "circle"
@@ -100,4 +104,5 @@ export const theme = createGlobalTheme(":root", {
   sizes,
   radii,
   shadows,
+  border
 })

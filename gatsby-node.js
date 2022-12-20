@@ -1,5 +1,7 @@
 const sanityBlockContentToHTML = require("@sanity/block-content-to-html")
 
+
+
 exports.createSchemaCustomization = async ({ actions }) => {
   actions.createFieldExtension({
     name: "blocktype",
@@ -55,12 +57,27 @@ exports.createSchemaCustomization = async ({ actions }) => {
     },
   })
 
+  // interface TitleWithText implements Node & HomepageBlock {
+  //   id: ID!
+  //   blocktype: String
+  //   title: String
+  //   kicker: String
+  //   description: String
+  // }
+  // interface NavItemGroup implements Node & HeaderNavItem {
+  //   id: ID!
+  //   navItemType: String
+  //   name: String
+  //   navItems: [NavItem]
+  // }
+
   // abstract interfaces
   actions.createTypes(/* GraphQL */ `
     interface HomepageBlock implements Node {
       id: ID!
       blocktype: String
     }
+
     interface HomepageHero implements Node & HomepageBlock {
       id: ID!
       blocktype: String
@@ -71,8 +88,15 @@ exports.createSchemaCustomization = async ({ actions }) => {
       text: String
       contactCard: HeroContactCard
     }
-    
-    interface HeroContactCard implements Node  {
+    interface TitleWithText implements Node & HomepageBlock {
+        id: ID!
+        blocktype: String
+        title: String
+        kicker: String
+        description: String
+      }
+
+    interface HeroContactCard implements Node {
       id: ID!
       blocktype: String
       headshot: HomepageImage
@@ -135,12 +159,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage
     }
 
-    interface NavItemGroup implements Node & HeaderNavItem {
-      id: ID!
-      navItemType: String
-      name: String
-      navItems: [NavItem]
-    }
+
 
     interface HomepageImage implements Node {
       id: ID!
@@ -176,6 +195,49 @@ exports.createSchemaCustomization = async ({ actions }) => {
       description: String
       image: HomepageImage
       content: [HomepageBlock]
+    }
+
+    interface TeamProfile implements Node {
+      id: ID!
+      image: HomepageImage
+      name: String
+      jobTitle: String
+      about: String
+      mlsId: String
+    }
+
+    interface TeamLeadership implements Node & HomepageBlock {
+      id: ID!
+      blocktype: String
+      heading: String
+      kicker: String
+      content: [TeamProfile]
+    }
+
+    interface MeetTheTeam implements Node {
+      id: ID!
+      title: String
+      description: String
+      image: HomepageImage
+      content: [HomepageBlock]
+    }
+
+    interface NeighborhoodsPage implements Node {
+      id: ID!
+      title: String
+      description: String
+      image: HomepageImage
+      content: [HomepageBlock]
+    }
+
+
+
+    interface NeighborhoodsHero implements Node & HomepageBlock {
+      id: ID!
+      blocktype: String
+      heading: String
+      text: String
+      image: HomepageImage
     }
 
     interface LayoutHeader implements Node {
@@ -215,8 +277,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
       footer: LayoutFooter
     }
 
-   
-
     interface Page implements Node {
       id: ID!
       slug: String!
@@ -227,7 +287,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
     }
   `)
 
-
   // CMS-specific types for Homepage
   actions.createTypes(/* GraphQL */ `
     type SanityHomepageLink implements Node & HomepageLink {
@@ -235,6 +294,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       href: String
       text: String
     }
+
     type SanityHeroContactCard implements Node & HeroContactCard @dontInfer {
       id: ID!
       blocktype: String @blocktype
@@ -245,8 +305,59 @@ exports.createSchemaCustomization = async ({ actions }) => {
       contactButton: HomepageLink @link
     }
 
-    
-    type SanityServicesList implements Node & ServicesList & HomepageBlock @dontInfer {
+    type SanityNeighborhoodsPage implements Node & NeighborhoodsPage {
+      id: ID!
+      title: String
+      description: String
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
+      content: [HomepageBlock]
+    }
+
+
+    type SanityMeetTheTeam implements Node & MeetTheTeam {
+      id: ID!
+      title: String
+      description: String
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
+      content: [HomepageBlock]
+    }
+
+    type SanityTeamProfile implements Node & TeamProfile {
+      id: ID!
+      name: String
+      jobTitle: String
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
+      about: String
+      mlsId: String
+    }
+
+    type SanityTeamLeadership implements Node & TeamLeadership & HomepageBlock
+      @dontInfer {
+      id: ID!
+      heading: String
+      blocktype: String @blocktype
+      kicker: String
+      content: [TeamProfile]
+    }
+   
+    interface SanityTitleWithText implements Node & TitleWithText & HomepageBlock {
+      id: ID!
+      blocktype: String @blocktype
+      title: String
+      kicker: String
+      description: String
+    }
+
+    type SanityNeighborhoodsHero implements Node & NeighborhoodsHero & HomepageBlock {
+      id: ID!
+      blocktype: String @blocktype
+      heading: String!
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
+      text: String
+    }
+
+    type SanityServicesList implements Node & ServicesList & HomepageBlock
+      @dontInfer {
       id: ID!
       heading: String
       blocktype: String @blocktype
@@ -264,8 +375,8 @@ exports.createSchemaCustomization = async ({ actions }) => {
       links: [HomepageLink]
     }
 
-    type  SanitySideBySideList implements Node & SideBySideList & HomepageBlock {
-      id: ID!,
+    type SanitySideBySideList implements Node & SideBySideList & HomepageBlock {
+      id: ID!
       blocktype: String @blocktype
       text: String
       sideBySideComponents: [SideBySideComponent]
@@ -276,7 +387,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       alt: String
       heading: String
       description: String
-      image: HomepageImage  @link(by: "id", from: "image.asset._ref")
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
     }
 
     type SanityImageAsset implements Node & HomepageImage {
@@ -330,12 +441,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       description: String
     }
 
-    type SanityNavItemGroup implements Node & NavItemGroup & HeaderNavItem {
-      id: ID!
-      navItemType: String @navItemType(name: "Group")
-      name: String
-      navItems: [NavItem] @link
-    }
+
 
     type SanityLayoutHeader implements Node & LayoutHeader {
       id: ID!
@@ -362,7 +468,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
       header: LayoutHeader
       footer: LayoutFooter
     }
-   
 
     type SanityPage implements Node & Page {
       id: ID!
@@ -375,95 +480,23 @@ exports.createSchemaCustomization = async ({ actions }) => {
   `)
 }
 
-// interface AboutPage implements Node {
+// type SanityNavItemGroup implements Node & NavItemGroup & HeaderNavItem {
+//   id: ID!
+//   navItemType: String @navItemType(name: "Group")
+//   name: String
+//   navItems: [NavItem] @link
+// }
+
+// type SanityPropertyManagmentPage implements Node & PropertyManagmentPage {
 //   id: ID!
 //   title: String
 //   description: String
-//   image: HomepageImage
 //   content: [HomepageBlock]
 // }
 
-// interface AboutHero implements Node & HomepageBlock {
-//   id: ID!
-//   blocktype: String
-//   heading: String
-//   text: String
-//   image: HomepageImage
-// }
-
-// interface AboutStat implements Node {
-//   id: ID!
-//   value: String
-//   label: String
-// }
-
-// interface AboutStatList implements Node & HomepageBlock {
-//   id: ID!
-//   blocktype: String
-//   content: [AboutStat]
-// }
-
-// interface AboutProfile implements Node {
-//   id: ID!
-//   image: HomepageImage
-//   name: String
-//   jobTitle: String
-// }
-
-// interface AboutLeadership implements Node & HomepageBlock {
-//   id: ID!
-//   blocktype: String
-//   kicker: String
-//   heading: String
-//   subhead: String
-//   content: [AboutProfile]
-// }
-
-// interface AboutLogoList implements Node & HomepageBlock {
-//   id: ID!
-//   blocktype: String
-//   heading: String
-//   links: [HomepageLink]
-//   logos: [HomepageLogo]
-// }
-// """
-// type SanityAboutPage implements Node & AboutPage {
+// interface PropertyManagmentPage implements Node {
 //   id: ID!
 //   title: String
 //   description: String
-//   image: HomepageImage @link(by: "id", from: "image.asset._ref")
 //   content: [HomepageBlock]
-// }
-
-// type SanityAboutHero implements Node & AboutHero & HomepageBlock {
-//   id: ID!
-//   blocktype: String @blocktype
-//   heading: String
-//   text: String
-//   image: HomepageImage @link(by: "id", from: "image.asset._ref")
-// }
-
-
-// type SanityAboutProfile implements Node & AboutProfile {
-//   id: ID!
-//   image: HomepageImage @link(by: "id", from: "image.asset._ref")
-//   name: String
-//   jobTitle: String
-// }
-
-// type SanityAboutLeadership implements Node & AboutLeadership & HomepageBlock {
-//   id: ID!
-//   blocktype: String @blocktype
-//   kicker: String
-//   heading: String
-//   subhead: String
-//   content: [AboutProfile]
-// }
-
-// type SanityAboutLogoList implements Node & AboutLogoList & HomepageBlock {
-//   id: ID!
-//   blocktype: String @blocktype
-//   heading: String
-//   links: [HomepageLink]
-//   logos: [HomepageLogo]
 // }

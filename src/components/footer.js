@@ -4,6 +4,7 @@ import {
   Twitter,
   Twitch,
   Instagram,
+  Linkedin,
   Facebook,
   Youtube,
   GitHub,
@@ -52,6 +53,10 @@ const socialMedia = {
     name: "Twitch",
     icon: <Twitch />,
   },
+  LINKEDIN: {
+    url: "https://linkedin.com/in",
+    icon: <Linkedin/>
+  }
 }
 
 const getSocialURL = ({ service, username }) => {

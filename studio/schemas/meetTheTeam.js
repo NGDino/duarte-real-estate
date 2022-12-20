@@ -15,7 +15,7 @@ export default {
         {
           type: "reference",
           to: [
-            { type: "teamHero" },
+            { type: "neighborhoodsHero" },
             { type: "teamLeadership" },
             // { type: "homepageBenefitList" },
           ],

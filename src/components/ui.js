@@ -2,6 +2,7 @@ import { Link as GatsbyLink } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import isAbsoluteURL from "is-absolute-url"
 import * as React from "react"
+import { theme } from "../theme.css"
 import * as styles from "./ui.css"
 
 export const cx = (...args) => args.filter(Boolean).join(" ")
@@ -27,6 +28,7 @@ export function Flex({
   responsive,
   marginY,
   alignItems,
+  listStyle = false,
   cx: _cx = [],
   ...props
 }) {
@@ -41,6 +43,23 @@ export function Flex({
         gutter ? styles.flexGap[0] : styles.flexGap[gap],
         marginY && styles.marginY[marginY],
         alignItems && styles.flexVariants[alignItems],
+        listStyle && styles.listStyle,
+        ..._cx,
+      ]}
+      {...props}
+    />
+  )
+}
+
+export function InfoCard({
+  heroBox = false,
+  cx: _cx = [],
+  ...props
+}) {
+  return (
+    <Box
+      cx={[
+        styles.infoCard,
         ..._cx,
       ]}
       {...props}
@@ -49,7 +68,7 @@ export function Flex({
 }
 
 export function Gradient({
-  color1 = "#808080",
+  color1 = "#302f2f",
   color2 = "#5A5A5A",
   opacity = 0.7
 }) {
@@ -66,6 +85,8 @@ export function Box({
   radius,
   center = false,
   order,
+  isCard= false,
+  heroBox = false,
   cx: _cx = [],
   ...props
 }) {
@@ -79,6 +100,8 @@ export function Box({
         radius && styles.radii[radius],
         center && styles.box.center,
         order && styles.order[order],
+        isCard && styles.card,
+        heroBox && styles.heroBox,
         ..._cx,
       ]}
       {...props}
@@ -112,14 +135,17 @@ export function Nudge({ left, right, top, bottom, ...props }) {
   )
 }
 
-export function Section(props) {
-  return <Box as="section" className={styles.section} {...props} />
+export function Section({fullHeight = false ,...props}) {
+  return <Box as="section" cx = {[
+      fullHeight && styles.fullHeight
+  ]} className={styles.section} {...props} />
 }
 
 export function Text({
   variant = "body",
   center = false,
   bold = false,
+  color = 'black',
   ...props
 }) {
   return (
@@ -128,6 +154,7 @@ export function Text({
         styles.text[variant],
         center && styles.text.center,
         bold && styles.text.bold,
+        styles.colors[color],
       ]}
       {...props}
     />

@@ -73,7 +73,7 @@ export default function Header() {
   return (
     <header>
       <Container className={desktopHeaderNavWrapper} width={'wide'}>
-        {/* <Space size={0} /> */}
+        {/* <Space size={1} /> */}
         <Flex variant="spaceBetween"  >
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
@@ -82,7 +82,7 @@ export default function Header() {
           <nav>
             <FlexList gap={4}>
               {navItems &&
-                navItems.map((navItem) => (
+                navItems.map((navItem, idx) => (
                   <li key={navItem.id}>
                     {navItem.navItemType === "Group" ? (
                       <NavItemGroup

@@ -1,29 +1,44 @@
-import React from 'react'
+import React from "react"
 import {
-    Box,
-    ButtonList,
-    Container,
-    Flex,
-    Heading,
-    Kicker,
-    Section,
-    Subhead,
-    Text,
-  } from "./ui"
+  Avatar,
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  Kicker,
+  Section,
+  Subhead,
+  Text,
+} from "./ui"
+import { container } from "./ui.css"
 
 const ContactCard = (props) => {
-    const {contactCard} = props
-    console.log('contactyyy', contactCard)
+  const { contactCard } = props
   return (
-    <Box width="half">
-                <Heading as="h1" style={{ color: "white" }}>
-              {contactCard.name && <Kicker>{contactCard.name}</Kicker>}
-              {contactCard.h1}
-            </Heading>
-            <Subhead as="h2" style={{ color: "white" }}>
-              {contactCard.description}
-            </Subhead>
-  </Box>
+    <Box width="twothirds" center background="black" isCard={true}>
+      <Flex variant="center" responsive gap={2}>
+        <Heading as="h1" color="white">
+          {contactCard.name && <Kicker color="white">Realtor</Kicker>}
+          {contactCard.name}
+        </Heading>
+        <Box>
+          <Avatar
+            alt="headshot of David Duarte professional realtor"
+            image={contactCard.headshot.gatsbyImageData}
+          />
+        </Box>
+        <Text variant="small" bold color="white">
+          {contactCard.licenseNumber}
+        </Text>
+        <Text variant="statLabel" color="white">
+          {contactCard.description}
+        </Text>
+        <Button to={contactCard.contactButton.href} variant= "reversed">
+                  {contactCard.contactButton.text}
+        </Button>
+      </Flex>
+    </Box>
   )
 }
 

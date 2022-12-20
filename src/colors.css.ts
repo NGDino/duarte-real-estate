@@ -5,5 +5,8 @@ export const colors = {
   primary: "#000000",
   muted: "#f14e41",
   active: "#e6e6e6",
-  black: "#000",
+  black: "#000000",
+  border: '#6e6b62',
+  white: '#b3afaf',
+  gray: '#b3afaf'
 }
