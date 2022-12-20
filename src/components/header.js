@@ -35,7 +35,20 @@ export default function Header() {
               href
               text
             }
-            ... on NavItemGroup {
+          
+          }
+          cta {
+            id
+            href
+            text
+          }
+        }
+      }
+    }
+  `)
+
+  /*
+    ... on NavItemGroup {
               name
               navItems {
                 id
@@ -48,16 +61,7 @@ export default function Header() {
                 }
               }
             }
-          }
-          cta {
-            id
-            href
-            text
-          }
-        }
-      }
-    }
-  `)
+  */
 
   const { navItems, cta } = data.layout.header
   const [isOpen, setOpen] = React.useState(false)

@@ -38,10 +38,10 @@ export const query = graphql`
         ...ServicesListContent
         ...HomepageTestimonialListContent
         ...SideBySideComponentContent
-        ...TitleWithTextContent
+        
       }
     }
   }
 `
 
-//
+//...TitleWithTextContent
