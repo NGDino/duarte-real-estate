@@ -36,11 +36,11 @@ function Testimonial(props) {
 export default function TestimonialList(props) {
   return (
     <Section>
-      {/* <Container>
+      <Container>
         <Box center>
           <Heading>
             {props.kicker && <Kicker>{props.kicker}</Kicker>}
-            {props.heading}
+            
           </Heading>
         </Box>
         <FlexList gutter={3} variant="start" responsive wrap>
@@ -50,7 +50,7 @@ export default function TestimonialList(props) {
             </Box>
           ))}
         </FlexList>
-      </Container> */}
+      </Container>
     </Section>
   )
 }

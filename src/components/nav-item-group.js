@@ -68,6 +68,7 @@ export default function NavItemGroup({ name, navItems }) {
       variant="columnStart"
       gap={4}
       className={styles.navGroupWrapper}
+      gutter={4}
     >
       <NavButtonLink
         onClick={onGroupButtonClick}

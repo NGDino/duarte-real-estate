@@ -9,8 +9,8 @@ export {default as SideBySideList} from './sideBySideList'
 
 // export { default as HomepageStatList } from "./stat-list"
 // export { default as HomepageProductList } from "./product-list"
-// export { default as NeighborhoodsHero } from "./neighborhoodsHero"
+export { default as NeighborhoodsHero } from "./neighborhoodsHero"
 // export { default as PropertyManagmentPage } from "./propertyManagement"
 // export { default as AboutStatList } from "./about-stat-list"
-// export { default as TeamLeadership } from "./meetTheTeam"
+export { default as TeamLeadership } from "./meetTheTeam"
 // export { default as AboutLogoList } from "./about-logo-list"

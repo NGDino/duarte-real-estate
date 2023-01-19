@@ -29,5 +29,29 @@ module.exports = {
         icon: "src/favicon.png",
       },
     },
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
+        web: [
+          {
+            name: `Bebas Neue`,
+            file: `https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;600;700&display=swap`,
+          },
+          {
+            name: `Nunito Sans`, 
+            file: `https://fonts.google.com/specimen/Nunito+Sans`
+          },
+          {
+            name: 'Merriweather',
+            file: 'https://fonts.google.com/specimen/Merriweather'
+          }
+        ],
+      },
+    },
   ],
 }

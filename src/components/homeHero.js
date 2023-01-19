@@ -1,19 +1,10 @@
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as React from "react"
-import {
-  Box,
-  ButtonList,
-  Container,
-  Gradient,
-  Flex,
-  Heading,
-  Kicker,
-  Section,
-  Subhead,
-  Text,
-} from "./ui"
+import { Box, Container, Gradient, Flex, Heading, Kicker, Subhead } from "./ui";
+import { addShadow } from "./ui.css";
 import ContactCard from "./contactCard"
+import { heroSection } from "./homeHero.css"
 
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
@@ -27,12 +18,12 @@ export default function HomeHero(props) {
       <Gradient />
 
       <Container width="wide">
-        <Flex gap={0} variant="responsive">
+        <Flex gap={2} variant="responsive" className={heroSection}>
           <Box width="half" heroBox center>
-            <Flex variant="center" responsive gap={0}>
+            <Flex variant="center" responsive gap={2} className={addShadow} gutter={-3} >
               <Heading as="h1" color="white">
                 {props.kicker && (
-                  <Kicker bold color="black">
+                  <Kicker bold color="white">
                     {props.kicker}
                   </Kicker>
                 )}
@@ -43,7 +34,9 @@ export default function HomeHero(props) {
               </Subhead>
             </Flex>
           </Box>
-          <ContactCard contactCard={contactCard} />
+          {/* <Box width="half" heroBox  center> */}
+            <ContactCard contactCard={contactCard} />
+          {/* </Box> */}
         </Flex>
       </Container>
     </BackgroundImage>

@@ -12,12 +12,13 @@ import {
   Space,
   Flex,
 } from "./ui";
+import { boxShadow, centerMe } from "./ui.css";
 import * as styles from "./ui.css.ts"
 
 function Benefit(props) {
   return (
 
-        <InfoCard width="third" radius= "large" padding= {3} paddingY= {4} center>
+        <InfoCard width="third" radius= "large" padding= {3} paddingY= {4}  className= {boxShadow} >
           {/* <Icon size="medium" image /> */}
 
           <Icon alt="buying icon" image={props.image.gatsbyImageData}  size="large"/>
@@ -33,7 +34,7 @@ function Benefit(props) {
 export default function BenefitList(props) {
   return (
     <Section>
-      <Container width="narrow">
+      <Container width="narrow" className={centerMe} >
         <Box center>
           {props.heading && <Heading>{props.heading}</Heading>}
           {props.text && <Text variant="lead">{props.text}</Text>}

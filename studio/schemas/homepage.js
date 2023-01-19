@@ -18,7 +18,7 @@ export default {
             { type: "servicesList" },
             { type: "sideBySideList" },
             { type: "homepageTestimonialList" },
-            { type: "titleWithText" },
+            // { type: "titleWithText" },
           ],
         },
       ],

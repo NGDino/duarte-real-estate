@@ -19,13 +19,13 @@
     "@vanilla-extract/webpack-plugin": "^2.1.5",
     "gatsby": "^4.15.1",
     "gatsby-background-image": "^1.6.0",
+    "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-image": "^2.15.0",
     "gatsby-plugin-manifest": "^4.6.0",
     "gatsby-plugin-react-helmet": "^5.5.0",
     "gatsby-plugin-sharp": "^4.15.0",
     "gatsby-plugin-vanilla-extract": "^2.0.1",
     "gatsby-source-filesystem": "^4.15.0",
-    
     "gatsby-source-sanity": "^7.3.2",
     "gatsby-transformer-sharp": "^4.15.0",
     "gbimage-bridge": "^0.2.2",
@@ -39,9 +39,9 @@
   "devDependencies": {
     "configstore": "^5.0.0",
     "cross-env": "^7.0.3",
+    "gatsby-provision-sanity": "^0.0.5",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.5",
-    "prettier": "2.5.1",
-    "gatsby-provision-sanity": "^0.0.5"
+    "prettier": "2.5.1"
   }
 }

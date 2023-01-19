@@ -11,12 +11,12 @@ import {
   Subhead,
   Text,
 } from "./ui"
-import { container } from "./ui.css"
+import { container, contactBg, addShadow } from "./ui.css"
 
 const ContactCard = (props) => {
   const { contactCard } = props
   return (
-    <Box width="twothirds" center background="black" isCard={true}>
+    <Box className={contactBg} heroBox center width="half"  background="black" >
       <Flex variant="center" responsive gap={2}>
         <Heading as="h1" color="white">
           {contactCard.name && <Kicker color="white">Realtor</Kicker>}

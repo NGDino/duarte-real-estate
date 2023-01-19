@@ -57,13 +57,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
     },
   })
 
-  // interface TitleWithText implements Node & HomepageBlock {
-  //   id: ID!
-  //   blocktype: String
-  //   title: String
-  //   kicker: String
-  //   description: String
-  // }
+ 
   // interface NavItemGroup implements Node & HeaderNavItem {
   //   id: ID!
   //   navItemType: String
@@ -131,6 +125,14 @@ exports.createSchemaCustomization = async ({ actions }) => {
     interface HomepageBlock implements Node {
       id: ID!
       blocktype: String
+    }
+
+    interface NeighborhoodsPage implements Node {
+      id: ID!
+      title: String
+      description: String
+      image: HomepageImage
+      content: [HomepageBlock]
     }
 
     interface HomepageHero implements Node & HomepageBlock {
@@ -284,6 +286,39 @@ exports.createSchemaCustomization = async ({ actions }) => {
       footer: LayoutFooter
     }
 
+    interface NeighborhoodsHero implements Node & HomepageBlock {
+      id: ID!
+      blocktype: String
+      heading: String
+      text: String
+      image: HomepageImage
+    }
+
+    interface TeamProfile implements Node {
+      id: ID!
+      image: HomepageImage
+      name: String
+      jobTitle: String
+      about: String
+      mlsId: String
+    }
+
+    interface TeamLeadership implements Node & HomepageBlock {
+      id: ID!
+      blocktype: String
+      heading: String
+      kicker: String
+      content: [TeamProfile]
+    }
+
+    interface MeetTheTeam implements Node {
+      id: ID!
+      title: String
+      description: String
+      image: HomepageImage
+      content: [HomepageBlock]
+    }
+
     interface Page implements Node {
       id: ID!
       slug: String!
@@ -292,6 +327,8 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage
       html: String!
     }
+
+  
   `)
 
   // CMS-specific types for Homepage
@@ -355,6 +392,14 @@ exports.createSchemaCustomization = async ({ actions }) => {
       text: String
     }
 
+    type SanityNeighborhoodsPage implements Node & NeighborhoodsPage {
+      id: ID!
+      title: String
+      description: String
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
+      content: [HomepageBlock]
+    }
+
     type SanityHeroContactCard implements Node & HeroContactCard @dontInfer {
       id: ID!
       blocktype: String @blocktype
@@ -363,6 +408,14 @@ exports.createSchemaCustomization = async ({ actions }) => {
       licenseNumber: String
       description: String
       contactButton: HomepageLink @link
+    }
+
+    type SanityNeighborhoodsHero implements Node & NeighborhoodsHero & HomepageBlock {
+      id: ID!
+      blocktype: String @blocktype
+      heading: String!
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
+      text: String
     }
    
 
@@ -487,6 +540,32 @@ exports.createSchemaCustomization = async ({ actions }) => {
       description: String
       image: HomepageImage @link(by: "id", from: "image.asset._ref")
       html: String! @sanityBlockContent(fieldName: "content")
+    }
+
+    type SanityMeetTheTeam implements Node & MeetTheTeam {
+      id: ID!
+      title: String
+      description: String
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
+      content: [HomepageBlock]
+    }
+
+    type SanityTeamProfile implements Node & TeamProfile {
+      id: ID!
+      name: String
+      jobTitle: String
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
+      about: String
+      mlsId: String
+    }
+
+    type SanityTeamLeadership implements Node & TeamLeadership & HomepageBlock
+      @dontInfer {
+      id: ID!
+      heading: String
+      blocktype: String @blocktype
+      kicker: String
+      content: [TeamProfile]
     }
   `)
 }

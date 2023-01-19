@@ -110,7 +110,7 @@ export default function Footer() {
             <VisuallyHidden>Home</VisuallyHidden>
             <BrandLogo />
           </NavLink>
-          <Space />
+          <Space size={0}/>
           <FlexList>
             {socialLinks &&
               socialLinks.map((link) => {
@@ -128,7 +128,7 @@ export default function Footer() {
               })}
           </FlexList>
         </Flex>
-        <Space size={5} />
+        <Space size={0} />
         <Flex variant="start" responsive>
           <FlexList variant="start" responsive>
             {links &&
@@ -152,7 +152,7 @@ export default function Footer() {
           <Text variant="small">{copyright}</Text>
         </Flex>
       </Container>
-      <Space size={3} />
+      <Space size={0} />
     </Box>
   )
 }

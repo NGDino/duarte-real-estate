@@ -10,51 +10,62 @@ import {
   Box,
   Kicker,
   Space,
+  Avatar,
+  InfoCard,
 } from "./ui"
+import { cardContainer } from "./ui.css"
 
 function AboutProfile(props) {
   return (
-    <Box width="third" padding={4} center>
-      {/* {props.image && (
-        <GatsbyImage
-          alt={props.image.alt}
+    <Box width="full" padding={3} center>
+      <InfoCard width="half" radius= "large" padding= {3} paddingY= {4}>
+
+      {props.image && (
+
+        <Avatar
+          alt='agent image'
           image={getImage(props.image.gatsbyImageData)}
         />
       )}
-      <Space size={3} />
-      <Box>
+  
         {props.name && (
-          <Text variant="medium" bold center>
+          <Text variant="medium" bold center color="black">
             {props.name}
           </Text>
         )}
         {props.jobTitle && (
-          <Text variant="medium" center>
+          <Text variant="medium" center color="black">
             {props.jobTitle}
           </Text>
+   
         )}
-      </Box> */}
-      check test 12
+        <Text center >
+          {props.about}
+        </Text>
+        <Text variant="small" center color="black">
+           {props.mlsId}
+         </Text>
+      </InfoCard>
+    
     </Box>
   )
 }
 
 export default function AboutLeadership(props) {
-  console.log('lets work!!', props)
   return (
     <Section>
-      <Container width="tight">
-        {/* <Box center paddingY={4}>
+      <Container width="tight" >
+        <Box center paddingY={1}>
           {props.kicker && <Kicker>{props.kicker}</Kicker>}
           {props.heading && <Heading as="h1">{props.heading}</Heading>}
           {props.subhead && <Text>{props.subhead}</Text>}
         </Box>
-        <FlexList gap={0} variant="center" alignItems="start">
+        <FlexList gap={2} variant="center" responsive wrap className = {cardContainer}>
+       
           {props.content.map((profile) => (
             <AboutProfile key={profile.id} {...profile} />
           ))}
-        </FlexList> */}
-        checky checky
+        </FlexList>
       </Container>
     </Section>
   )

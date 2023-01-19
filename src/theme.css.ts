@@ -46,9 +46,9 @@ const fontWeights = {
 }
 
 const fonts = {
-  text: '"Tahoma", sans-serif',
-  heading: '"Tahoma", sans-serif',
-  mono: "Tahoma",
+  text: 'Merriweather',
+  heading: 'Bebas Neue',
+  mono: "Bebas Neue",
 }
 
 const lineHeights = {
@@ -67,7 +67,7 @@ const letterSpacings = {
 const sizes = {
   container: "100%",
   narrow: "80%",
-  wide: "100vw",
+  wide: "100%",
   tight: "848px",
   avatar: "7em",
   navGroupBoxMin: "300px",
@@ -106,3 +106,5 @@ export const theme = createGlobalTheme(":root", {
   shadows,
   border
 })
+
+

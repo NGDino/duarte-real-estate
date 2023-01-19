@@ -10,14 +10,17 @@ import {
   Flex,
   FlexList,
 } from "./ui"
-import * as styles from "./about-hero.css"
+import * as styles from "./about-hero.css";
+
+import { imageTextSwitch, sideImage } from "./ui.css";
 
 const ImageDiv = ({ image }) => {
   return (
-    <Box width="half">
+    <Box width="half"  padding={4}>
       <GatsbyImage
         alt="house or something"
         image={getImage(image.gatsbyImageData)}
+       className ={sideImage}
       />
     </Box>
   )
@@ -35,19 +38,22 @@ const TextDiv = (props) => {
 
 const SideBySideItem = (props) => {
   return (
-    <div>
+    <Box center>
       {props.idx % 2 === 0 ? (
-        <Flex  >
+        <Flex responsive className={imageTextSwitch}>
           <ImageDiv image={props.image} />
           <TextDiv {...props} />
         </Flex>
       ) : (
-        <Flex >
-          
-          <TextDiv {...props} /> <ImageDiv image={props.image} />
+        <Flex responsive >
+        
+          <TextDiv {...props} id='text2'/> 
+          <ImageDiv image={props.image} id='image2'/>
+
+      
         </Flex>
       )}
-    </div>
+    </Box>
   )
 }
 
@@ -55,7 +61,7 @@ const SideBySideList = (props) => {
   return (
     <div>
       {props && (
-        <Container>
+        <Container width="narrow">
           {props.sideBySideComponents.map((info, idx) => (
             <SideBySideItem id={info.id} idx={idx} {...info} />
           ))}

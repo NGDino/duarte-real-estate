@@ -1,6 +1,6 @@
 export const colors = {
   background: "#ebf2f5",
-  navBackground: '#556970',
+  navBackground: '#f9f9f9',
   text: "#000000",
   primary: "#000000",
   muted: "#f14e41",
