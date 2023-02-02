@@ -1,7 +1,5 @@
 const sanityBlockContentToHTML = require("@sanity/block-content-to-html")
 
-
-
 exports.createSchemaCustomization = async ({ actions }) => {
   actions.createFieldExtension({
     name: "blocktype",
@@ -57,7 +55,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
     },
   })
 
- 
   // interface NavItemGroup implements Node & HeaderNavItem {
   //   id: ID!
   //   navItemType: String
@@ -146,7 +143,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
       contactCard: HeroContactCard
     }
 
-
     interface HeroContactCard implements Node {
       id: ID!
       blocktype: String
@@ -210,8 +206,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage
     }
 
-
-
     interface HomepageImage implements Node {
       id: ID!
       alt: String
@@ -248,7 +242,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
       content: [HomepageBlock]
     }
 
-   
     interface LayoutHeader implements Node {
       id: ID!
       navItems: [HeaderNavItem]
@@ -328,7 +321,12 @@ exports.createSchemaCustomization = async ({ actions }) => {
       html: String!
     }
 
-  
+    interface PropertyManagmentPage implements Node {
+      id: ID!
+      title: String
+      description: String
+      content: [HomepageBlock]
+    }
   `)
 
   // CMS-specific types for Homepage
@@ -417,8 +415,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage @link(by: "id", from: "image.asset._ref")
       text: String
     }
-   
-
 
     type SanityServicesList implements Node & ServicesList & HomepageBlock
       @dontInfer {
@@ -505,8 +501,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
       description: String
     }
 
-
-
     type SanityLayoutHeader implements Node & LayoutHeader {
       id: ID!
       navItems: [HeaderNavItem] @link(from: "navItems._ref")
@@ -567,6 +561,12 @@ exports.createSchemaCustomization = async ({ actions }) => {
       kicker: String
       content: [TeamProfile]
     }
+    type SanityPropertyManagmentPage implements Node & PropertyManagmentPage {
+      id: ID!
+      title: String
+      description: String
+      content: [HomepageBlock]
+    }
   `)
 }
 
@@ -577,16 +577,4 @@ exports.createSchemaCustomization = async ({ actions }) => {
 //   navItems: [NavItem] @link
 // }
 
-// type SanityPropertyManagmentPage implements Node & PropertyManagmentPage {
-//   id: ID!
-//   title: String
-//   description: String
-//   content: [HomepageBlock]
-// }
 
-// interface PropertyManagmentPage implements Node {
-//   id: ID!
-//   title: String
-//   description: String
-//   content: [HomepageBlock]
-// }
