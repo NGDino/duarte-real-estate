@@ -18,7 +18,7 @@ import { cardContainer } from "./ui.css"
 function AboutProfile(props) {
   return (
     <Box width="full" padding={3} center>
-      <InfoCard width="half" radius= "large" padding= {3} paddingY= {4}>
+      <InfoCard center background="darkGray" width="fitContent" radius= "large" padding= {3} paddingY= {4}>
 
       {props.image && (
 
@@ -54,7 +54,7 @@ function AboutProfile(props) {
 export default function AboutLeadership(props) {
   return (
     <Section>
-      <Container width="tight" >
+      <Container width="" >
         <Box center paddingY={1}>
           {props.kicker && <Kicker>{props.kicker}</Kicker>}
           {props.heading && <Heading as="h1">{props.heading}</Heading>}

@@ -3,8 +3,8 @@ import Head from '../components/head';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import { navigate } from "gatsby-link"
-import { Box, Heading, Section, Text } from '../components/ui';
-import { contactContainer, inputStyle, textAreaStyle } from '../components/ui.css';
+import { Box, Heading, Section, Text, Button } from '../components/ui';
+import { contactContainer, inputStyle, textAreaStyle, buttons } from '../components/ui.css';
 
 const encode = (data) => {
     return Object.keys(data)
@@ -22,17 +22,18 @@ const Contact = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log('sent')
         const form = event.target;
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({
-                "form-name": form.getAttribute("name"),
-                ...formState,
-            }),
-        })
-            .then(() => navigate(form.getAttribute("action")))
-            .catch((error) => alert(error));
+    //     fetch("/", {
+    //         method: "POST",
+    //         headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //         body: encode({
+    //             "form-name": form.getAttribute("name"),
+    //             ...formState,
+    //         }),
+    //     })
+    //         .then(() => navigate(form.getAttribute("action")))
+    //         .catch((error) => alert(error));
     };
     return (
       <>
@@ -70,7 +71,7 @@ const Contact = () => {
            
             <textarea className={textAreaStyle} />
             </label>
-         
+            <button className={buttons['primary']}>Submit</button>
           </form>
         </Box>
         <Footer/>

@@ -61,6 +61,7 @@ export const containers: Record<Containers, string> = styleVariants({
     container,
     {
       maxWidth: theme.sizes.narrow,
+
     },
   ],
   tight: [
@@ -212,9 +213,9 @@ export const textAreaStyle = style({
 
 export const inputStyle = style({
   
-    width: '100%',
-backgroundColor: 'white',
-color: 'white',
+width: '100%',
+backgroundColor: theme.colors.white,
+color: theme.colors.gray,
 padding: '14px 20px',
 margin: '8px 0',
 border: '1px solid #ccc',
@@ -587,6 +588,7 @@ export const buttons: Record<ButtonVariants, string> = styleVariants({
       backgroundColor: theme.colors.primary,
       ":hover": {
         backgroundColor: theme.colors.active,
+        color: theme.colors.black,
       },
       ":focus": {
         backgroundColor: theme.colors.active,
@@ -654,6 +656,14 @@ export const backgrounds: Record<Backgrounds, string> = styleVariants({
     color: theme.colors.primary,
     backgroundColor: theme.colors.muted,
   },
+  conCard: {
+    color: theme.colors.muted,
+    backgroundColor: theme.colors.black
+  },
+  darkGray: {
+    color: theme.colors.black,
+    backgroundColor: theme.colors.gray
+  }
 })
 
 export const fullHeight = style({
@@ -673,7 +683,7 @@ export const infoCard = style ({
     [media.small]: {
       borderStyle: 'solid',
       display: 'table-cell',
-      boxShadow: '5px 10px',
+      boxShadow: '0px 3px 15px' ,
 
     
     }

@@ -46,9 +46,9 @@ const fontWeights = {
 }
 
 const fonts = {
-  text: 'Merriweather',
-  heading: 'Bebas Neue',
-  mono: "Bebas Neue",
+  text: 'EB Garamond',
+  heading: 'Questrial',
+  mono: "Questrial",
 }
 
 const lineHeights = {

@@ -18,7 +18,7 @@ import * as styles from "./ui.css.ts"
 function Benefit(props) {
   return (
 
-        <InfoCard width="third" radius= "large" padding= {3} paddingY= {4}  className= {boxShadow} >
+        <InfoCard width="third" radius= "large" padding= {3} paddingY= {4} background = "darkGray" >
           {/* <Icon size="medium" image /> */}
 
           <Icon alt="buying icon" image={props.image.gatsbyImageData}  size="large"/>
@@ -41,7 +41,7 @@ export default function BenefitList(props) {
         </Box>
         <Space size={3} />
         <Box>
-        <FlexList gap={3} variant="center" responsive wrap className ={styles.cardContainer}>
+        <FlexList gap={0} variant="center" responsive wrap className ={styles.cardContainer}>
           {props.content.map((benefit) => (
             <Benefit key={benefit.id} {...benefit} />
           ))}

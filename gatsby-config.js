@@ -39,16 +39,12 @@ module.exports = {
         ],
         web: [
           {
-            name: `Bebas Neue`,
-            file: `https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;600;700&display=swap`,
+            name: `Questrial`,
+            file: `https://fonts.google.com/specimen/Questrial`,
           },
           {
-            name: `Nunito Sans`, 
-            file: `https://fonts.google.com/specimen/Nunito+Sans`
-          },
-          {
-            name: 'Merriweather',
-            file: 'https://fonts.google.com/specimen/Merriweather'
+            name: 'EB Garamond',
+            file: 'https://fonts.google.com/specimen/EB+Garamond'
           }
         ],
       },

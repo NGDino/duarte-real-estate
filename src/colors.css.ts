@@ -1,12 +1,12 @@
 export const colors = {
-  background: "#ebf2f5",
-  navBackground: '#f9f9f9',
+  background: "#CCCCCC",
+  navBackground: '#666666',
   text: "#000000",
-  primary: "#000000",
+  primary: "#B40101",
   muted: "#f14e41",
-  active: "#e6e6e6",
+  active: "#CCCCCC",
   black: "#000000",
   border: '#6e6b62',
-  white: '#b3afaf',
-  gray: '#b3afaf'
+  white: '#CCCCCC',
+  gray: '#666666'
 }

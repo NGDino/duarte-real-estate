@@ -11,12 +11,13 @@ import {
   Subhead,
   Text,
 } from "./ui"
-import { container, contactBg, addShadow } from "./ui.css"
+import { container, contactBg, addShadow } from "./ui.css";
+
 
 const ContactCard = (props) => {
   const { contactCard } = props
   return (
-    <Box className={contactBg} heroBox center width="half"  background="black" >
+    <Box className={contactBg} heroBox center width="half"  background="conCard" >
       <Flex variant="center" responsive gap={2}>
         <Heading as="h1" color="white">
           {contactCard.name && <Kicker color="white">Realtor</Kicker>}
@@ -34,7 +35,7 @@ const ContactCard = (props) => {
         <Text variant="statLabel" color="white">
           {contactCard.description}
         </Text>
-        <Button to={contactCard.contactButton.href} variant= "reversed">
+        <Button to={contactCard.contactButton.href} variant= "primary">
                   {contactCard.contactButton.text}
         </Button>
       </Flex>

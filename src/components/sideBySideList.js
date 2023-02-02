@@ -40,14 +40,14 @@ const SideBySideItem = (props) => {
   return (
     <Box center>
       {props.idx % 2 === 0 ? (
-        <Flex responsive className={imageTextSwitch}>
+        <Flex responsive center className={imageTextSwitch}>
           <ImageDiv image={props.image} />
           <TextDiv {...props} />
         </Flex>
       ) : (
-        <Flex responsive >
+        <Flex responsive center >
         
-          <TextDiv {...props} id='text2'/> 
+          <TextDiv {...props}  id='text2'/> 
           <ImageDiv image={props.image} id='image2'/>
 
       
@@ -61,7 +61,7 @@ const SideBySideList = (props) => {
   return (
     <div>
       {props && (
-        <Container width="narrow">
+        <Container width="narrow" center>
           {props.sideBySideComponents.map((info, idx) => (
             <SideBySideItem id={info.id} idx={idx} {...info} />
           ))}
