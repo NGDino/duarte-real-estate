@@ -11,6 +11,7 @@ import {
   buttons,
 } from "../components/ui.css"
 import ContactCard from "../components/contactCard"
+import BrandLogo from "../components/brand-logo"
 
 const encode = (data) => {
   return Object.keys(data)
@@ -46,6 +47,7 @@ const Contact = () => {
 
       <Section padding={4}>
         <Box className={contactContainer} width="half">
+          <BrandLogo />
           <Heading center>Contact us</Heading>
           <Text>
             Discover a place you'll love to live. Connect with us for any

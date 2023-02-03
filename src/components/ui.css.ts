@@ -171,7 +171,7 @@ export const flexVariants: Record<FlexVariants, string> = styleVariants({
 })
 
 export const centerMe = style({
-  margin: '3% auto',
+  margin: '2% auto',
   textAlign: 'center',
   
 })
