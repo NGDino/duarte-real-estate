@@ -247,16 +247,18 @@ export const cardContainer = style({
 })
 export const testimonialContainer = style({
   backgroundColor: 'lightgrey',
+  
 })
 
-export const testimonial = style({
-  alignItems: 'center',
-  padding: '8px',
-  margin: '16px'
+export const testimonialCard = style({
+  display: "flex",
+ 
+  margin: '5px'
 })
 export const realtorAvatar = style({
   background: theme.colors.black,
-  padding: theme.space[3]
+  padding: theme.space[3],
+  margin: "5px auto"
 })
 
 export const realtorDetails = style({
