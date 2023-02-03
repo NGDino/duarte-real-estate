@@ -26,7 +26,7 @@ function AboutProfile(props) {
         background="darkGray"
         width="fitContent"
         radius="large"
-        padding={3}
+        padding={4}
         paddingY={4}
         
       >
@@ -60,7 +60,7 @@ function AboutProfile(props) {
             <Text variant="small">Fax: 783-263-7482 </Text>
             <Text variant="small">Email: david@realstate.com</Text>
             
-            <Text variant="small">Web: www.duarterealstate.comm</Text>
+            <Text variant="small">Web: www.duarterealstate.com</Text>
           {/*<Text center>{props.about}</Text>*/}
     
           <Text variant="small" center color="black">
@@ -76,7 +76,7 @@ function AboutProfile(props) {
 export default function AboutLeadership(props) {
   return (
     <Section>
-      <Container width="narrow" className={centerMe}>
+      <Container width="full" className={centerMe}>
         <Box center paddingY={1}>
           <BrandLogo />
           {props.kicker && <Kicker>{props.kicker}</Kicker>}
@@ -89,7 +89,7 @@ export default function AboutLeadership(props) {
           ))}
         </FlexList>
       </Container>
-    </Section>
+   </Section>
   )
 }
 

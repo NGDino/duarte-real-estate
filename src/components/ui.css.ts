@@ -2,7 +2,7 @@ import { style, styleVariants } from "@vanilla-extract/css"
 import { calc } from "@vanilla-extract/css-utils"
 import { theme } from "../theme.css"
 
-const breakpoints = ["22em", "40em","47em", "55em", "64em"]
+const breakpoints = ["22em", "40em","47em", "55em", "67em"]
 
 export const media = {
   smallXtra: `screen and (min-width: ${breakpoints[0]})`,
@@ -80,12 +80,14 @@ export const containers: Record<Containers, string> = styleVariants({
       paddingRight: 0,
       paddingTop: theme.space[4],
       paddingBottom: theme.space[4],
+      margin: theme.space[2],
       "@media": {
         [media.medium]: {
           paddingLeft: theme.space[4],
           paddingRight: theme.space[4],
           paddingTop: theme.space[5],
           paddingBottom: theme.space[5],
+          margin: theme.space[2],
         },
       },
     },
@@ -252,7 +254,6 @@ export const testimonialContainer = style({
 
 export const testimonialCard = style({
   display: "flex",
- 
   margin: '5px'
 })
 export const realtorAvatar = style({
@@ -308,7 +309,10 @@ export const order = styleVariants({ 0: 0, 1: 1, 2: 2, 3: 3 }, (order) => ({
     [media.small]: {
       order,
     },
-  },
+    [media.smallXtra]: {
+      order,
+    },
+    }
 }))
 export const box = styleVariants({
   center: {
