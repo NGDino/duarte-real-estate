@@ -90,7 +90,7 @@ const radii: Record<Radii, string> = {
 
 const shadows = {
   large:
-    "0px 4px 8px 0px #2E29330A, 0px 4px 24px 0px #2E293314, 0px 8px 24px 0px #473F4F29",
+    "0px 4px 8px 0px #2E29330A, 0px 4px 14px 0px #2E293314, 0px 8px 24px 0px #473F4F29",
 }
 
 export const theme = createGlobalTheme(":root", {

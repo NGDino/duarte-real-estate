@@ -57,9 +57,7 @@ export const containers: Record<Containers, string> = styleVariants({
       maxWidth: theme.sizes.wide,
       paddingLeft: 0,
       paddingRight: 0,
-      margin: theme.space[4]
-    
-      
+
     },
   ],
   narrow: [
@@ -251,7 +249,8 @@ export const testimonial = style({
   backgroundColor: 'lightgrey',
   alignItems: 'center',
   padding: '4px 8px',
-  borderRadius: '8px'
+  borderRadius: '8px', 
+  margin: '8px 16px'
 })
 
 export const gradient = style({
@@ -701,19 +700,18 @@ export const fullHeight = style({
 })
 
 export const infoCard = style ({
-  display: "block",
-  // width: '100%',
-  // margin: '5px',
+  display: 'block',
+   width: '100%',
+   margin: '8px auto',
   "@media": {
     [media.small]: {
       borderStyle: 'solid',
-      display: 'table-cell',
-      boxShadow: '0px 3px 15px' ,
+      boxShadow: '0px 3px 15px',
 
-    
     }
   }
 })
+
 
 export const card: any = style ({
   width: '50%',
