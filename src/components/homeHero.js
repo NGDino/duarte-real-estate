@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as React from "react"
-import { Box, Container, Gradient, Flex, Heading, Kicker, Text, Subhead } from "./ui"
+import { Box, Container, Gradient, Flex, Heading, Kicker, Subhead } from "./ui"
 import { addShadow } from "./ui.css"
 import ContactCard from "./contactCard"
 import { heroSection } from "./homeHero.css"

@@ -1,23 +1,11 @@
 import React from "react"
-import {
-  Avatar,
-  Box,
-  Button,
-  Container,
-  Flex,
-  Heading,
-  Kicker,
-  Section,
-  Subhead,
-  Text,
-} from "./ui"
-import { container, contactBg, addShadow } from "./ui.css";
-
+import { Avatar, Box, Button, Flex, Kicker, Subhead, Text } from "./ui"
+import { contactBg } from "./ui.css"
 
 const ContactCard = (props) => {
   const { contactCard } = props
   return (
-    <Box className={contactBg} heroBox center width="half"   background="conCard" >
+    <Box className={contactBg} heroBox center width="half" background="conCard">
       <Flex variant="center" responsive gap={2}>
         <Subhead as="h1" color="white">
           {contactCard.name && <Kicker color="white">Realtor</Kicker>}
@@ -35,8 +23,8 @@ const ContactCard = (props) => {
         <Text variant="statLabel" color="white">
           {contactCard.description}
         </Text>
-        <Button to={contactCard.contactButton.href} variant= "primary">
-                  {contactCard.contactButton.text}
+        <Button to={contactCard.contactButton.href} variant="primary">
+          {contactCard.contactButton.text}
         </Button>
       </Flex>
     </Box>

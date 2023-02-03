@@ -11,7 +11,7 @@ import {
   Space,
   Heading,
 } from "./ui"
-import { centerMe, header2, infoCard} from "./ui.css"
+import { centerMe, infoCard} from "./ui.css"
 
 function Benefit(props) {
   return (
@@ -44,7 +44,7 @@ export default function BenefitList(props) {
     <Section>
       <Container width="narrow" className={centerMe}>
         <Box center>
-          {props.heading && <Heading className={header2}>{props.heading}</Heading>}
+          {props.heading && <Heading>{props.heading}</Heading>}
           {props.text && <Text variant="lead">{props.text}</Text>}
         </Box>
         <Space size={3} />

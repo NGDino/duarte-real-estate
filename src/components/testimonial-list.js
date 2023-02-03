@@ -12,7 +12,7 @@ import {
   Text,
   Avatar,
 } from "./ui"
-import { testimonial, testimonialAvatar } from "./ui.css"
+import { testimonial, testimonialAvatar, testimonialContainer } from "./ui.css"
 
 function Testimonial(props) {
   return (
@@ -36,12 +36,12 @@ function Testimonial(props) {
 
 export default function TestimonialList(props) {
   return (
-    <Section>
+    <Section className={testimonialContainer}>
       <Container width="wide">
-        <Box center>
-          <Heading>{props.kicker && <Kicker>{props.kicker}</Kicker>}</Heading>
+        <Box center padding={3}>
+          <Heading as="h2">{props.kicker && <Kicker>{props.kicker}</Kicker>}</Heading>
         </Box>
-        <FlexList gutter={4} variant="start" responsive wrap>
+        <FlexList gutter={3} variant="start" responsive wrap>
           {props.content.map((testimonial, index) => (
             <Box as="li" key={testimonial.id + index} width="half" padding={3}>
               <Testimonial {...testimonial} />

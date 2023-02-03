@@ -15,7 +15,7 @@ export const media = {
 
 export const container = style({
   maxWidth: theme.sizes.container,
-  margin: "0 auto", // just removed the margin left and right to center the content
+  margin: "0 auto",
   paddingLeft: theme.space[4],
   paddingRight: theme.space[4],
 })
@@ -27,7 +27,8 @@ export const sideImage = style({
 })
 
 export const sideItem = style({
-   margin: '5% auto'
+   margin: '5% auto', 
+   width: '100%'
 })
 
 //box width for contact card
@@ -38,8 +39,8 @@ export const contactBg = style({
   
    ":hover":{
   opacity: 1
-}
-}
+    }
+  }
 )
 
 export const addShadow = style({
@@ -152,10 +153,12 @@ export const flexVariants: Record<FlexVariants, string> = styleVariants({
   },
   responsive: {
     flexDirection: "column",
+    
     "@media": {
         [media.smallXtra]: {
           overflow: "auto",
-          margin: "auto", 
+          margin: "auto",
+      
         },
         [media.small]: {
         flexDirection: "row",
@@ -208,7 +211,7 @@ export const contactContainer = style({
   borderRadius: '5%',
   backgroundColor: 'grey',
   padding:'2em',
-  margin: "5% auto"
+  margin: "3% auto"
   
 })
 
@@ -243,10 +246,10 @@ export const cardContainer = style({
   borderSpacing: '10px', 
   
 })
-
-export const testimonial = style({
-  border: '1px solid lightgrey', 
+export const testimonialContainer = style({
   backgroundColor: 'lightgrey',
+})
+export const testimonial = style({
   alignItems: 'center',
   padding: '4px 8px',
   borderRadius: '8px', 

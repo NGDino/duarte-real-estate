@@ -3,7 +3,7 @@ import Head from "../components/head"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import { navigate } from "gatsby-link"
-import { Box, Heading, Section, Text, Button } from "../components/ui"
+import { Box, Heading, Section, Text } from "../components/ui"
 import {
   contactContainer,
   inputStyle,
@@ -43,11 +43,14 @@ const Contact = () => {
     <>
       <Header />
 
-      <Section padding={4} >
-        <Box className={contactContainer}  width="half">
+      <Section padding={4}>
+        <Box className={contactContainer} width="half">
           <Heading center>Contact us</Heading>
-
-          <form onSubmit={handleSubmit} >
+          <Text>
+            Discover a place you'll love to live. Connect with us for any
+            questions and inquiries. We are more than happy to serve you!
+          </Text>
+          <form onSubmit={handleSubmit}>
             <label>
               <Text variant="subhead">Name:</Text>
               <input type="text" className={inputStyle} />
