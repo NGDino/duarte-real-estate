@@ -12,14 +12,14 @@ import {
   Text,
   Avatar,
 } from "./ui"
-import { testimonial, testimonialAvatar, testimonialCard, testimonialContainer } from "./ui.css"
+import { testimonialCard, testimonialContainer } from "./ui.css"
 
 function Testimonial(props) {
   return (
     <Flex variant="center" className={testimonialCard} width="tight">
-      {/*{props.avatar && (
+{/*{props.avatar && (
         <Avatar alt={props.avatar.alt} image={props.avatar.gatsbyImageData} />
-      )}*/}
+)}*/}
       <Blockquote>
         <Text as="p" variant="lead">
           ""{props.quote}""
@@ -39,7 +39,9 @@ export default function TestimonialList(props) {
     <Section className={testimonialContainer}>
       <Container width="tight">
         <Box center padding={3}>
-          <Heading as="h2">{props.kicker && <Kicker>{props.kicker}</Kicker>}</Heading>
+          <Heading as="h2">
+            {props.kicker && <Kicker>{props.kicker}</Kicker>}
+          </Heading>
         </Box>
         <FlexList gutter={3} variant="start" responsive wrap>
           {props.content.map((testimonial, index) => (

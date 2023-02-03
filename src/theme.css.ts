@@ -71,6 +71,7 @@ const sizes = {
   wide: "100%",
   tight: "848px",
   avatar: "14em",
+  testimonialAvatar: "6em",
   navGroupBoxMin: "300px",
   navGroupBoxMax: "400px",
   navIcon: "32px",
