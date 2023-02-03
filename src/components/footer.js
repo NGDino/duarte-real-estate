@@ -21,7 +21,6 @@ import {
   VisuallyHidden,
 } from "./ui"
 import BrandLogo from "./brand-logo"
-import { footerContainer } from "./ui.css"
 
 const socialMedia = {
   TWITTER: {

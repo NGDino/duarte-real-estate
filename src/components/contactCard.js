@@ -17,6 +17,7 @@ const ContactCard = (props) => {
             image={contactCard.headshot.gatsbyImageData}
           />
         </Box>
+
         <Text variant="small" bold color="white">
           {contactCard.licenseNumber}
         </Text>

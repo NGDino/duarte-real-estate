@@ -14,6 +14,7 @@ import {
   InfoCard,
 } from "./ui"
 import { avatar, card, cardContainer, cardTeam, centerMe } from "./ui.css"
+import BrandLogo from "./brand-logo"
 
 function AboutProfile(props) {
   return (
@@ -57,6 +58,7 @@ export default function AboutLeadership(props) {
     <Section>
       <Container width="narrow" className={centerMe}>
         <Box center paddingY={1}>
+          <BrandLogo/>
           {props.kicker && <Kicker>{props.kicker}</Kicker>}
           {props.heading && <Heading as="h1">{props.heading}</Heading>}
           {props.subhead && <Text>{props.subhead}</Text>}
