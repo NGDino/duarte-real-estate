@@ -12,7 +12,7 @@ import {
 } from "./ui"
 import * as styles from "./about-hero.css"
 
-import { imageTextSwitch, sideImage } from "./ui.css"
+import { imageTextSwitch, sideImage, sideItem } from "./ui.css"
 
 const ImageDiv = ({ image }) => {
   return (
@@ -38,7 +38,7 @@ const TextDiv = (props) => {
 
 const SideBySideItem = (props) => {
   return (
-    <Box center>
+    <Box center className={sideItem}>
       {props.idx % 2 === 0 ? (
         <Flex responsive center className={imageTextSwitch}>
           <ImageDiv image={props.image} />

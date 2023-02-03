@@ -21,22 +21,22 @@ export const container = style({
 })
 
 export const sideImage = style({
-  borderRadius: '10%', 
+  borderRadius: '8%', 
   boxShadow: "4px 4px 4px 4px grey"
   
 })
 
+export const sideItem = style({
+   margin: '5% auto'
+})
+
 //box width for contact card
 export const contactBg = style({
-  width: '100%',
   padding: '1em',
   opacity: 0.7,
-  // "@media": {
-  //   [media.small]: {
-  //     paddingLeft: '100px'
-  //   }
-  // },
-":hover":{
+  borderTopLeftRadius: '60%',
+  
+   ":hover":{
   opacity: 1
 }
 }
@@ -167,7 +167,7 @@ export const flexVariants: Record<FlexVariants, string> = styleVariants({
 })
 
 export const centerMe = style({
-  margin: 'auto',
+  margin: '3% auto',
   textAlign: 'center'
 })
 
@@ -206,7 +206,7 @@ export const contactContainer = style({
   height: '100vh',
   borderStyle: 'solid',
   borderRadius: '10%',
-  backgroundColor: 'gray',
+  backgroundColor: 'grey',
   padding:'2em'
   
  
@@ -250,7 +250,7 @@ export const testimonial = style({
   alignItems: 'center',
   padding: '4px 8px',
   borderRadius: '8px', 
-  margin: '8px 16px'
+  margin: '8px 16px',
 })
 
 export const gradient = style({
@@ -405,7 +405,7 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       marginBottom: theme.space[3],
-      fontSize: theme.fontSizes[3],
+      fontSize: theme.fontSizes[4],
       fontWeight: theme.fontWeights.normal,
       lineHeight: theme.lineHeights.text,
       letterSpacing: theme.letterSpacings.normal,
@@ -415,15 +415,15 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       marginTop: theme.space[4],
-      marginBottom: theme.space[6],
-      fontSize: theme.fontSizes[5],
+      marginBottom: theme.space[4],
+      fontSize: theme.fontSizes[6],
       fontFamily: theme.fonts.heading,
       fontWeight: theme.fontWeights.extrabold,
       lineHeight: theme.lineHeights.heading,
       letterSpacing: theme.letterSpacings.tight,
       "@media": {
         [media.small]: {
-          fontSize: theme.fontSizes[7],
+          fontSize: theme.fontSizes[6],
         },
       },
     },
@@ -433,14 +433,20 @@ export const text: Record<TextVariants, string> = styleVariants({
     {
       marginBottom: theme.space[3],
       fontFamily: theme.fonts.heading,
-      fontSize: theme.fontSizes[5],
+      fontSize: theme.fontSizes[7],
       fontWeight: theme.fontWeights.extrabold,
       lineHeight: theme.lineHeights.tight,
       letterSpacing: theme.letterSpacings.tight,
       "@media": {
         [media.medium]: {
+          fontSize: theme.fontSizes[7],
+          
+        },
+        
+        [media.smallXtra]: {
           fontSize: theme.fontSizes[6],
         },
+        
       },
     },
   ],
@@ -452,6 +458,16 @@ export const text: Record<TextVariants, string> = styleVariants({
       fontWeight: theme.fontWeights.extrabold,
       lineHeight: theme.lineHeights.tight,
       letterSpacing: theme.letterSpacings.tight,
+      "@media": {
+        [media.medium]: {
+          fontSize: theme.fontSizes[5],
+          
+        },
+        
+        [media.smallXtra]: {
+          fontSize: theme.fontSizes[4],
+        },
+      }
     },
   ],
   subheadSmall: [
@@ -500,8 +516,9 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       fontWeight: theme.fontWeights.bold,
-      fontSize: theme.fontSizes[4],
+      fontSize: theme.fontSizes[3],
       lineHeight: theme.lineHeights.heading,
+      
     },
   ],
   small: [
@@ -735,6 +752,7 @@ export const card: any = style ({
 
 export const heroBox = style({
   height: '100%',
+  
 })
 
 
