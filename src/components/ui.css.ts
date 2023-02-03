@@ -2,25 +2,28 @@ import { style, styleVariants } from "@vanilla-extract/css"
 import { calc } from "@vanilla-extract/css-utils"
 import { theme } from "../theme.css"
 
-const breakpoints = ["40em", "55em", "64em"]
+const breakpoints = ["22em", "40em","47em", "55em", "64em"]
 
 export const media = {
-  small: `screen and (min-width: ${breakpoints[0]})`,
-  medium: `screen and (min-width: ${breakpoints[1]})`,
-  large: `screen and (min-width: ${breakpoints[2]})`,
-  infoCard: `screen and (max-width: '770px'`,
-  maxSmall: `screen and (max-width: ${breakpoints[0]}`
+  smallXtra: `screen and (min-width: ${breakpoints[0]})`,
+  small: `screen and (min-width: ${breakpoints[1]})`,
+  medium: `screen and (min-width: ${breakpoints[3]})`,
+  large: `screen and (min-width: ${breakpoints[4]})`,
+  infoCard: `screen and (max-width: ${breakpoints[4]}`,
+  maxSmall: `screen and (max-width: ${breakpoints[1]}`
 }
 
 export const container = style({
   maxWidth: theme.sizes.container,
-  margin: "12px auto",
+  margin: "0 auto", // just removed the margin left and right to center the content
   paddingLeft: theme.space[4],
   paddingRight: theme.space[4],
 })
 
 export const sideImage = style({
-  borderRadius: '10%'
+  borderRadius: '10%', 
+  boxShadow: "4px 4px 4px 4px grey"
+  
 })
 
 //box width for contact card
@@ -54,6 +57,8 @@ export const containers: Record<Containers, string> = styleVariants({
       maxWidth: theme.sizes.wide,
       paddingLeft: 0,
       paddingRight: 0,
+      margin: theme.space[4]
+    
       
     },
   ],
@@ -126,6 +131,7 @@ export const flexVariants: Record<FlexVariants, string> = styleVariants({
   },
   column: {
     flexDirection: "column",
+    
   },
   end: {
     alignItems: "flex-end",
@@ -140,7 +146,7 @@ export const flexVariants: Record<FlexVariants, string> = styleVariants({
     justifyContent: "space-between",
   },
   center: {
-    // width: "100%",
+    width: "100%",
     flexWrap: "wrap",
     justifyContent: "center",
     alignItems: "center", 
@@ -149,11 +155,16 @@ export const flexVariants: Record<FlexVariants, string> = styleVariants({
   responsive: {
     flexDirection: "column",
     "@media": {
-      [media.small]: {
+        [media.smallXtra]: {
+          overflow: "auto",
+          margin: "auto", 
+        },
+        [media.small]: {
         flexDirection: "row",
         margin: "auto"
       },
-    },
+    }
+
   },
 })
 
@@ -235,6 +246,14 @@ export const cardContainer = style({
   
 })
 
+export const testimonial = style({
+  border: '1px solid lightgrey', 
+  backgroundColor: 'lightgrey',
+  alignItems: 'center',
+  padding: '4px 8px',
+  borderRadius: '8px'
+})
+
 export const gradient = style({
   backgroundImage: `linear-gradient(to top, #302f2f, #5A5A5A)`,
   backgroundSize: 'cover',
@@ -249,7 +268,7 @@ export const gradient = style({
 export const list = style({
   listStyle: "none",
   padding: 0,
-  margin: 0,
+
 })
 
 export const padding = styleVariants(theme.space, (padding) => ({ padding }))
