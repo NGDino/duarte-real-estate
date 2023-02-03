@@ -70,7 +70,7 @@ const sizes = {
   narrow: "80%",
   wide: "100%",
   tight: "848px",
-  avatar: "8em",
+  avatar: "14em",
   navGroupBoxMin: "300px",
   navGroupBoxMax: "400px",
   navIcon: "32px",

@@ -8,57 +8,66 @@ import {
   Section,
   Text,
   Box,
-  Kicker,
   Flex,
+  Kicker,
   Avatar,
   InfoCard,
   Subhead,
 } from "./ui"
-import {
-  aboutSection,
-  aboutTitle,
-  avatar,
-  card,
-  cardContainer,
-  cardTeam,
-  centerMe,
-} from "./ui.css"
-import BrandLogo from "./brand-logo"
-import Contact from "../pages/contact"
-import TestimonialList from "./testimonial-list"
+import {centerMe, realtorAvatar, realtorCard, realtorDetails, testimonial } from "./ui.css"
+import BrandLogo from "./brand-logo";
+
 
 function AboutProfile(props) {
   return (
-    <Box width="third" padding={3}>
+    <Box width="" padding={1}>
       <InfoCard
-        center
+        className={realtorCard}
         background="darkGray"
         width="fitContent"
         radius="large"
         padding={3}
         paddingY={4}
+        
       >
-        {props.image && (
-          <Avatar
-            alt="agent image"
-            image={getImage(props.image.gatsbyImageData)}
-          />
-        )}
+      <Flex variant="start" className={testimonial}>
+        <Box className={realtorAvatar}>
+          {props.image && (
+            <Avatar
+              alt="agent image"
+              image={getImage(props.image.gatsbyImageData)}
+            />
+          )}
 
-        {props.name && (
-          <Text variant="medium" bold center color="black">
-            {props.name}
+          {props.name && (
+            <Text variant="medium" bold color="black">
+              {props.name}
+            </Text>
+          )}
+          {props.jobTitle && (
+            <Text variant="medium" color="black">
+              {props.jobTitle}
+            </Text>
+          )}
+        </Box>
+        <Box className={realtorDetails} variant="start">
+          <BrandLogo />
+          <Subhead variant="medium" color="black">
+            Duarte Family Real Estate 
+            </Subhead>
+            <Text variant="small">Cell: 775-678-8905 </Text>
+            <Text variant="small">Office: 866-720-8403</Text>
+            <Text variant="small">Fax: 783-263-7482 </Text>
+            <Text variant="small">Email: david@realstate.com</Text>
+            
+            <Text variant="small">Web: www.duarterealstate.comm</Text>
+          {/*<Text center>{props.about}</Text>*/}
+    
+          <Text variant="small" center color="black">
+            {props.mlsId}
           </Text>
-        )}
-        {props.jobTitle && (
-          <Text variant="medium" center color="black">
-            {props.jobTitle}
-          </Text>
-        )}
-        <Text center>{props.about}</Text>
-        <Text variant="small" center color="black">
-          {props.mlsId}
-        </Text>
+        </Box>
+        </Flex>
       </InfoCard>
     </Box>
   )

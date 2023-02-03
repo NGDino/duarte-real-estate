@@ -248,10 +248,21 @@ export const cardContainer = style({
 export const testimonialContainer = style({
   backgroundColor: 'lightgrey',
 })
+
 export const testimonial = style({
   alignItems: 'center',
   padding: '8px',
-  margin: '16px',
+  margin: '16px'
+})
+export const realtorAvatar = style({
+  background: theme.colors.black,
+  padding: theme.space[3]
+})
+
+export const realtorDetails = style({
+  borderLeft: "1px solid black",
+  padding: theme.space[3],
+  
 })
 
 export const gradient = style({
@@ -756,6 +767,7 @@ export const heroBox = style({
   height: '100%',
   
 })
+
 export const blockquote = style({
   margin: 0,
   paddingLeft: "8px",
