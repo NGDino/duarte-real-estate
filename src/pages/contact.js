@@ -43,11 +43,11 @@ const Contact = () => {
     <>
       <Header />
 
-      <Section padding={4}>
-        <Box className={contactContainer}>
+      <Section padding={4} >
+        <Box className={contactContainer}  width="half">
           <Heading center>Contact us</Heading>
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} >
             <label>
               <Text variant="subhead">Name:</Text>
               <input type="text" className={inputStyle} />

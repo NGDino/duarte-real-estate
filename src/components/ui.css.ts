@@ -204,13 +204,12 @@ export const widths: Record<Widths, string> = styleVariants(
 )
 
 export const contactContainer = style({
-  height: '100vh',
   borderStyle: 'solid',
-  borderRadius: '10%',
+  borderRadius: '5%',
   backgroundColor: 'grey',
-  padding:'2em'
+  padding:'2em',
+  margin: "5% auto"
   
- 
 })
 
 export const textAreaStyle = style({
