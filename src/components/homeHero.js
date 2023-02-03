@@ -4,7 +4,7 @@ import * as React from "react"
 import { Box, Container, Gradient, Flex, Heading, Kicker, Subhead } from "./ui"
 import { addShadow } from "./ui.css"
 import ContactCard from "./contactCard"
-import { heroSection } from "./homeHero.css"
+import { heroSection, homeTitle } from "./homeHero.css"
 
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
@@ -19,7 +19,7 @@ export default function HomeHero(props) {
 
       <Container width="wide">
         <Flex gap={2} variant="responsive" className={heroSection}>
-          <Box width="half" heroBox center>
+          <Box width="half" heroBox center className={homeTitle}>
             <Flex
               variant="center"
               responsive

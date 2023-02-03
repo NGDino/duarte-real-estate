@@ -22,8 +22,8 @@ export const container = style({
 
 export const sideImage = style({
   borderRadius: '8%', 
-  boxShadow: "4px 4px 4px 4px grey"
-  
+  boxShadow: "4px 4px 4px 4px grey",
+   
 })
 
 export const sideItem = style({

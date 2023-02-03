@@ -1,6 +1,5 @@
 import { style, styleVariants } from "@vanilla-extract/css";
 import { theme } from "../theme.css";
-import { media } from "./ui.css";
 
 
 export const heroSection = style({
@@ -10,4 +9,7 @@ export const heroSection = style({
 export const shortHero = style({
     height: '50vh',
     marginTop: 0
+})
+export const homeTitle = style({
+    width: "80%"
 })
