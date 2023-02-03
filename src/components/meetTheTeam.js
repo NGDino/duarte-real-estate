@@ -17,7 +17,7 @@ import { cardContainer } from "./ui.css"
 
 function AboutProfile(props) {
   return (
-    <Box width="full" padding={3} center>
+    <Box width="full" padding={3} >
       <InfoCard center background="darkGray" width="fitContent" radius= "large" padding= {3} paddingY= {4}>
 
       {props.image && (

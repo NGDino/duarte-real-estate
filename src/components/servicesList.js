@@ -18,7 +18,7 @@ import * as styles from "./ui.css.ts"
 function Benefit(props) {
   return (
 
-        <InfoCard width="third" radius= "large" padding= {3} paddingY= {4} background = "darkGray" >
+        <InfoCard width="third" radius= "large" padding= {3} paddingY= {4}  background = "darkGray" >
           {/* <Icon size="medium" image /> */}
 
           <Icon alt="buying icon" image={props.image.gatsbyImageData}  size="large"/>

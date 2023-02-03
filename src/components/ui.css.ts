@@ -14,8 +14,7 @@ export const media = {
 
 export const container = style({
   maxWidth: theme.sizes.container,
-  marginLeft: 0,
-  marginRight: 0,
+  margin: "12px auto",
   paddingLeft: theme.space[4],
   paddingRight: theme.space[4],
 })
@@ -55,6 +54,7 @@ export const containers: Record<Containers, string> = styleVariants({
       maxWidth: theme.sizes.wide,
       paddingLeft: 0,
       paddingRight: 0,
+      
     },
   ],
   narrow: [
@@ -95,6 +95,7 @@ export const listStyle = style({
 export const flex = style({
   display: "flex",
   alignItems: "center",
+  
 })
 
 export type FlexVariants =
@@ -135,19 +136,22 @@ export const flexVariants: Record<FlexVariants, string> = styleVariants({
   spaceBetween: {
     width: "100%",
     flexWrap: "wrap",
+    margin: "auto",
     justifyContent: "space-between",
   },
   center: {
     // width: "100%",
     flexWrap: "wrap",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center", 
+    margin: "auto"
   },
   responsive: {
     flexDirection: "column",
     "@media": {
       [media.small]: {
         flexDirection: "row",
+        margin: "auto"
       },
     },
   },
@@ -190,7 +194,7 @@ export const widths: Record<Widths, string> = styleVariants(
 )
 
 export const contactContainer = style({
-  height: '80vh',
+  height: '100vh',
   borderStyle: 'solid',
   borderRadius: '10%',
   backgroundColor: 'gray',
@@ -217,7 +221,7 @@ width: '100%',
 backgroundColor: theme.colors.white,
 color: theme.colors.gray,
 padding: '14px 20px',
-margin: '8px 0',
+margin: '12px auto',
 border: '1px solid #ccc',
 borderRadius: '4px',
 display: 'inline-block',
@@ -227,7 +231,8 @@ boxSizing: 'border-box'
 
 export const cardContainer = style({
   display: 'table',
-  borderSpacing: '10px'
+  borderSpacing: '10px', 
+  
 })
 
 export const gradient = style({
@@ -280,6 +285,7 @@ export const box = styleVariants({
     justifyContent:'center',
     alignItems: "center",
     textAlign: "center",
+    
   },
 })
 
