@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import * as sections from "../components/sections"
 import Fallback from "../components/fallback"
+import { centerMe } from "../components/ui.css"
 
 export default function PropertyManagmentPage(props) {
   console.log('just props management', props)
@@ -13,7 +14,7 @@ export default function PropertyManagmentPage(props) {
       {propertyManagmentPage.blocks.map((block) => {
         const { id, blocktype, ...componentProps } = block
         const Component = sections[blocktype] || Fallback
-        return <Component key={id} {...componentProps} />
+        return <Component key={id} {...componentProps} className={centerMe}/>
       })}
     </Layout>
   )

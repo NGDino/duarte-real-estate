@@ -11,7 +11,7 @@ import {
   Space,
   Heading,
 } from "./ui"
-import { centerMe, infoCard} from "./ui.css"
+import { centerMe, infoCard } from "./ui.css"
 
 function Benefit(props) {
   return (

@@ -13,7 +13,7 @@ import {
   Avatar,
   InfoCard,
 } from "./ui"
-import { avatar, card, cardContainer, cardTeam } from "./ui.css"
+import { avatar, card, cardContainer, cardTeam, centerMe } from "./ui.css"
 
 function AboutProfile(props) {
   return (
@@ -55,7 +55,7 @@ function AboutProfile(props) {
 export default function AboutLeadership(props) {
   return (
     <Section>
-      <Container width="narrow">
+      <Container width="narrow" className={centerMe}>
         <Box center paddingY={1}>
           {props.kicker && <Kicker>{props.kicker}</Kicker>}
           {props.heading && <Heading as="h1">{props.heading}</Heading>}
