@@ -13,21 +13,26 @@ import {
   Avatar,
   InfoCard,
 } from "./ui"
-import { cardContainer } from "./ui.css"
+import { avatar, card, cardContainer, cardTeam } from "./ui.css"
 
 function AboutProfile(props) {
   return (
-    <Box width="full" padding={3} >
-      <InfoCard center background="darkGray" width="fitContent" radius= "large" padding= {3} paddingY= {4}>
+    <Box width="third" padding={3}>
+      <InfoCard
+        center
+        background="darkGray"
+        width="fitContent"
+        radius="large"
+        padding={3}
+        paddingY={4}
+      >
+        {props.image && (
+          <Avatar
+            alt="agent image"
+            image={getImage(props.image.gatsbyImageData)}
+          />
+        )}
 
-      {props.image && (
-
-        <Avatar
-          alt='agent image'
-          image={getImage(props.image.gatsbyImageData)}
-        />
-      )}
-  
         {props.name && (
           <Text variant="medium" bold center color="black">
             {props.name}
@@ -37,16 +42,12 @@ function AboutProfile(props) {
           <Text variant="medium" center color="black">
             {props.jobTitle}
           </Text>
-   
         )}
-        <Text center >
-          {props.about}
-        </Text>
+        <Text center>{props.about}</Text>
         <Text variant="small" center color="black">
-           {props.mlsId}
-         </Text>
+          {props.mlsId}
+        </Text>
       </InfoCard>
-    
     </Box>
   )
 }
@@ -54,14 +55,13 @@ function AboutProfile(props) {
 export default function AboutLeadership(props) {
   return (
     <Section>
-      <Container width="" >
+      <Container width="narrow">
         <Box center paddingY={1}>
           {props.kicker && <Kicker>{props.kicker}</Kicker>}
           {props.heading && <Heading as="h1">{props.heading}</Heading>}
           {props.subhead && <Text>{props.subhead}</Text>}
         </Box>
-        <FlexList gap={2} variant="center" responsive wrap className = {cardContainer}>
-       
+        <FlexList gap={2} variant="center" responsive wrap>
           {props.content.map((profile) => (
             <AboutProfile key={profile.id} {...profile} />
           ))}

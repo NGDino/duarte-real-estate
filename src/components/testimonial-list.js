@@ -12,13 +12,13 @@ import {
   Text,
   Avatar,
 } from "./ui"
-import { testimonial } from "./ui.css"
+import { testimonial, testimonialAvatar } from "./ui.css"
 
 function Testimonial(props) {
   return (
     <Flex variant="start" className={testimonial}>
       {props.avatar && (
-        <Avatar alt={props.avatar.alt} image={props.avatar.gatsbyImageData} />
+        <Avatar alt={props.avatar.alt} image={props.avatar.gatsbyImageData} className={testimonialAvatar}/>
       )}
       <Blockquote>
         <Text as="p" variant="lead">

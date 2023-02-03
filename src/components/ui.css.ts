@@ -168,7 +168,8 @@ export const flexVariants: Record<FlexVariants, string> = styleVariants({
 
 export const centerMe = style({
   margin: '3% auto',
-  textAlign: 'center'
+  textAlign: 'center',
+  
 })
 
 export const flexGap = styleVariants(theme.space, (gap) => ({ gap }))
@@ -516,7 +517,7 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       fontWeight: theme.fontWeights.bold,
-      fontSize: theme.fontSizes[3],
+      fontSize: theme.fontSizes[4],
       lineHeight: theme.lineHeights.heading,
       
     },
@@ -731,7 +732,7 @@ export const infoCard = style ({
 
 
 export const card: any = style ({
-  width: '50%',
+  width: '30%',
   marginLeft: 'auto',
   marginRight: 'auto',
   height: '100%',
@@ -740,7 +741,7 @@ export const card: any = style ({
   justifyContent: 'center',
   "@media": {
     [media.medium]: {
-      display: "block",
+      display: "column",
       width: '100%',
       paddingLeft: theme.space[4],
       paddingRight: theme.space[4],
@@ -754,11 +755,9 @@ export const heroBox = style({
   height: '100%',
   
 })
-
-
 export const blockquote = style({
   margin: 0,
-  paddingLeft: 0,
+  paddingLeft: "8px",
   paddingRight: 0,
   paddingTop: 0,
   paddingBottom: theme.space[4],
@@ -770,7 +769,7 @@ export const avatar = style({
   width: theme.sizes.avatar,
   height: theme.sizes.avatar,
   borderRadius: theme.radii.circle,
-
+  
 })
 
 export type LogoSizes = "small" | "medium"
