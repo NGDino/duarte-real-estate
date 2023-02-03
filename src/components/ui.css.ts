@@ -33,7 +33,7 @@ export const sideItem = style({
 
 //box width for contact card
 export const contactBg = style({
-  padding: '1em',
+  padding: '1.5em',
   //opacity: 0.7,
   borderTopLeftRadius: '65%',
   borderLeft: "10px solid grey",
@@ -46,7 +46,6 @@ export const contactBg = style({
 export const addShadow = style({
   textShadow: '0 3px 3px black'
 })
-
 
 export type Containers = "normal" | "wide" | "narrow" | "tight" | "fullbleed"
 

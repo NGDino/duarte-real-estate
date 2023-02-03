@@ -9,13 +9,23 @@ import {
   Text,
   Box,
   Kicker,
-  Space,
+  Flex,
   Avatar,
   InfoCard,
+  Subhead,
 } from "./ui"
-import { avatar, card, cardContainer, cardTeam, centerMe } from "./ui.css"
+import {
+  aboutSection,
+  aboutTitle,
+  avatar,
+  card,
+  cardContainer,
+  cardTeam,
+  centerMe,
+} from "./ui.css"
 import BrandLogo from "./brand-logo"
 import Contact from "../pages/contact"
+import TestimonialList from "./testimonial-list"
 
 function AboutProfile(props) {
   return (
@@ -59,7 +69,7 @@ export default function AboutLeadership(props) {
     <Section>
       <Container width="narrow" className={centerMe}>
         <Box center paddingY={1}>
-          <BrandLogo/>
+          <BrandLogo />
           {props.kicker && <Kicker>{props.kicker}</Kicker>}
           {props.heading && <Heading as="h1">{props.heading}</Heading>}
           {props.subhead && <Text>{props.subhead}</Text>}
@@ -70,7 +80,6 @@ export default function AboutLeadership(props) {
           ))}
         </FlexList>
       </Container>
-      
     </Section>
   )
 }

@@ -5,8 +5,8 @@ import { heroSection, shortHero } from "./homeHero.css"
 
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
-import {  getImage } from "gatsby-plugin-image"
-import {  Gradient, Flex, SuperHeading, Box, Heading } from "./ui"
+import { getImage } from "gatsby-plugin-image"
+import { Gradient, Flex, SuperHeading, Box, Heading } from "./ui"
 import * as styles from "./about-hero.css"
 
 export default function NeighborhoodsHero(props) {

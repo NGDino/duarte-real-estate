@@ -10,6 +10,7 @@ import {
   Text,
   Space,
   Heading,
+  Subhead,
 } from "./ui"
 import { centerMe, infoCard } from "./ui.css"
 
@@ -44,7 +45,7 @@ export default function BenefitList(props) {
     <Section>
       <Container width="narrow" className={centerMe}>
         <Box center>
-          {props.heading && <Heading>{props.heading}</Heading>}
+          {props.heading && <Heading variant="h2">{props.heading}</Heading>}
           {props.text && <Text variant="lead">{props.text}</Text>}
         </Box>
         <Space size={3} />

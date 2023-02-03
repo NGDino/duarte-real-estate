@@ -49,7 +49,7 @@ const Contact = () => {
           <Heading center>Contact us</Heading>
           <Text>
             Discover a place you'll love to live. Connect with us for any
-            questions and inquiries. We are more than happy to serve you!
+            questions and inquiries and never miss latest updates and sales! We are more than happy to serve you!
           </Text>
           <form onSubmit={handleSubmit}>
             <label>
@@ -64,7 +64,7 @@ const Contact = () => {
             </label>
 
             <label>
-              <Text variant="subhead">How can we help you:</Text>
+              <Text variant="subhead">How can we help you?</Text>
 
               <textarea className={textAreaStyle} />
             </label>
