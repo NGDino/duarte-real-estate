@@ -251,9 +251,8 @@ export const testimonialContainer = style({
 })
 export const testimonial = style({
   alignItems: 'center',
-  padding: '4px 8px',
-  borderRadius: '8px', 
-  margin: '8px 16px',
+  padding: '8px',
+  margin: '16px',
 })
 
 export const gradient = style({
@@ -607,6 +606,7 @@ export const blockLink = style({
   display: "block",
   color: "inherit",
   textDecoration: "none",
+
 })
 
 const button = style({
@@ -849,6 +849,6 @@ export const imageTextSwitch = style({
   
   display: 'flex',
   flexDirection: 'column-reverse'
-  
 
 })
+

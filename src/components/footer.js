@@ -21,6 +21,7 @@ import {
   VisuallyHidden,
 } from "./ui"
 import BrandLogo from "./brand-logo"
+import { footerContainer } from "./ui.css"
 
 const socialMedia = {
   TWITTER: {
@@ -55,8 +56,8 @@ const socialMedia = {
   },
   LINKEDIN: {
     url: "https://linkedin.com/in",
-    icon: <Linkedin/>
-  }
+    icon: <Linkedin />,
+  },
 }
 
 const getSocialURL = ({ service, username }) => {
@@ -110,7 +111,7 @@ export default function Footer() {
             <VisuallyHidden>Home</VisuallyHidden>
             <BrandLogo />
           </NavLink>
-          <Space size={0}/>
+
           <FlexList>
             {socialLinks &&
               socialLinks.map((link) => {
@@ -127,18 +128,7 @@ export default function Footer() {
                 )
               })}
           </FlexList>
-        </Flex>
-        <Space size={0} />
-        <Flex variant="start" responsive>
-          <FlexList variant="start" responsive>
-            {links &&
-              links.map((link) => (
-                <li key={link.id}>
-                  <NavLink to={link.href}>{link.text}</NavLink>
-                </li>
-              ))}
-          </FlexList>
-          <Space />
+          <Space space={1} />
           <FlexList>
             {meta &&
               meta.map((link) => (
@@ -148,11 +138,20 @@ export default function Footer() {
                   </NavLink>
                 </li>
               ))}
+            <Text variant="small">{copyright}</Text>
           </FlexList>
-          <Text variant="small">{copyright}</Text>
+        </Flex>
+        <Flex variant="start">
+          <FlexList variant="start">
+            {links &&
+              links.map((link) => (
+                <li key={link.id}>
+                  <NavLink to={link.href}>{link.text}</NavLink>
+                </li>
+              ))}
+          </FlexList>
         </Flex>
       </Container>
-      <Space size={0} />
     </Box>
   )
 }
