@@ -10,6 +10,7 @@ import {
   textAreaStyle,
   buttons,
 } from "../components/ui.css"
+import ContactCard from "../components/contactCard"
 
 const encode = (data) => {
   return Object.keys(data)

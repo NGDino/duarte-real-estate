@@ -15,6 +15,7 @@ import {
 } from "./ui"
 import { avatar, card, cardContainer, cardTeam, centerMe } from "./ui.css"
 import BrandLogo from "./brand-logo"
+import Contact from "../pages/contact"
 
 function AboutProfile(props) {
   return (
@@ -69,6 +70,7 @@ export default function AboutLeadership(props) {
           ))}
         </FlexList>
       </Container>
+      
     </Section>
   )
 }

@@ -34,11 +34,11 @@ export const sideItem = style({
 //box width for contact card
 export const contactBg = style({
   padding: '1em',
-  opacity: 0.7,
-  borderTopLeftRadius: '60%',
-  
+  //opacity: 0.7,
+  borderTopLeftRadius: '65%',
+  borderLeft: "10px solid grey",
    ":hover":{
-  opacity: 1
+  opacity: 0.7
     }
   }
 )
