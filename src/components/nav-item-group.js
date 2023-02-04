@@ -94,7 +94,7 @@ export default function NavItemGroup({ name, navItems }) {
             {navItems.map((navItem) => (
               <li key={navItem.id}>
                 <NavLink to={navItem.href} className={styles.navLinkListLink}>
-                  <Flex variant="start" gap={3}>
+                  <Flex variant="small" gap={3}>
                     {navItem.icon && (
                       <GatsbyImage
                         alt={navItem.icon.alt}

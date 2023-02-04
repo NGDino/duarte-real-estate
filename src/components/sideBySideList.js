@@ -7,7 +7,7 @@ import { imageTextSwitch, sideImage, sideItem } from "./ui.css"
 
 const ImageDiv = ({ image }) => {
   return (
-    <Box width="half" padding={4} >
+    <Box width="half" padding={4}>
       <GatsbyImage
         alt="house or something"
         image={getImage(image.gatsbyImageData)}
