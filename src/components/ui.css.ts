@@ -739,9 +739,11 @@ export const fullHeight = style({
 })
 
 export const infoCard = style ({
-  display: 'block',
+   display: 'block',
    width: '100%',
+   height: "320px",
    margin: '8px auto',
+   padding: "8px",
   "@media": {
     [media.small]: {
       borderStyle: 'solid',
