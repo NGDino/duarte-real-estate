@@ -32,9 +32,10 @@ const fontSizes = {
   2: "1.1em",
   3: "1.2em",
   4: "1.3em",
-  5: "1.4em",
-  6: "1.5em",
-  7: "1.8em",
+  5: "1.8em",
+  6: "2.5em",
+  7: "4.2em",
+  
 }
 
 const fontWeights = {
@@ -69,7 +70,8 @@ const sizes = {
   narrow: "80%",
   wide: "100%",
   tight: "848px",
-  avatar: "7em",
+  avatar: "14em",
+  testimonialAvatar: "6em",
   navGroupBoxMin: "300px",
   navGroupBoxMax: "400px",
   navIcon: "32px",
@@ -90,7 +92,7 @@ const radii: Record<Radii, string> = {
 
 const shadows = {
   large:
-    "0px 4px 8px 0px #2E29330A, 0px 4px 24px 0px #2E293314, 0px 8px 24px 0px #473F4F29",
+    "0px 4px 8px 0px #2E29330A, 0px 4px 14px 0px #2E293314, 0px 8px 24px 0px #473F4F29",
 }
 
 export const theme = createGlobalTheme(":root", {
