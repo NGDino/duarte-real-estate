@@ -10,7 +10,7 @@ import {
   Text,
   Space,
   Heading,
-  Subhead,
+  
 } from "./ui"
 import { centerMe, infoCard } from "./ui.css"
 
@@ -19,8 +19,6 @@ function Benefit(props) {
     <InfoCard
       width="third"
       radius="large"
-      padding={3}
-      paddingY={4}
       background="darkGray"
       className={infoCard}
     >

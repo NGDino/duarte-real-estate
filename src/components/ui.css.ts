@@ -64,7 +64,7 @@ export const containers: Record<Containers, string> = styleVariants({
     container,
     {
       maxWidth: theme.sizes.narrow,
-
+      
     },
   ],
   tight: [
@@ -281,7 +281,7 @@ export const gradient = style({
 })
 export const list = style({
   listStyle: "none",
-  padding: 0,
+   padding: 0,
 
 })
 
@@ -577,6 +577,7 @@ export const text: Record<TextVariants, string> = styleVariants({
 
 export const link = style({
   color: "inherit",
+  
   ":hover": {
     color: theme.colors.active,
   },
@@ -585,6 +586,8 @@ export const link = style({
 export const navlink = style({
   color: "inherit",
   textDecoration: "none",
+  fontSize: theme.fontSizes[3],
+  fontWeight: "bold",
   transitionProperty: "color",
   transitionDuration: "0.2s",
   transitionTimingFunction: "ease-in-out",
@@ -736,9 +739,11 @@ export const fullHeight = style({
 })
 
 export const infoCard = style ({
-  display: 'block',
+   display: 'block',
    width: '100%',
+   height: "320px",
    margin: '8px auto',
+   padding: "8px",
   "@media": {
     [media.small]: {
       borderStyle: 'solid',
