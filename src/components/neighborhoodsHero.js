@@ -23,6 +23,7 @@ export default function NeighborhoodsHero(props) {
           {props.text && (
             <Heading className={styles.aboutHeroText} color="white">{props.text}</Heading>
           )}
+          <h2>hello</h2>
         </Box>
       </Flex>
     </BackgroundImage>

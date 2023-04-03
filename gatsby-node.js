@@ -55,69 +55,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
     },
   })
 
-  // interface NavItemGroup implements Node & HeaderNavItem {
-  //   id: ID!
-  //   navItemType: String
-  //   name: String
-  //   navItems: [NavItem]
-  // }
-
-  //everything not on homepage
-
-  /*
- interface TeamProfile implements Node {
-      id: ID!
-      image: HomepageImage
-      name: String
-      jobTitle: String
-      about: String
-      mlsId: String
-    }
-
-    interface TeamLeadership implements Node & HomepageBlock {
-      id: ID!
-      blocktype: String
-      heading: String
-      kicker: String
-      content: [TeamProfile]
-    }
-
-    interface MeetTheTeam implements Node {
-      id: ID!
-      title: String
-      description: String
-      image: HomepageImage
-      content: [HomepageBlock]
-    }
-
-    interface NeighborhoodsPage implements Node {
-      id: ID!
-      title: String
-      description: String
-      image: HomepageImage
-      content: [HomepageBlock]
-    }
-
-
-
-    interface NeighborhoodsHero implements Node & HomepageBlock {
-      id: ID!
-      blocktype: String
-      heading: String
-      text: String
-      image: HomepageImage
-    }
-        interface TitleWithText implements Node & HomepageBlock {
-        id: ID!
-        blocktype: String
-        title: String
-        kicker: String
-        description: String
-      }
-
-  */
-
-  // abstract interfaces
   actions.createTypes(/* GraphQL */ `
     interface HomepageBlock implements Node {
       id: ID!
@@ -327,62 +264,17 @@ exports.createSchemaCustomization = async ({ actions }) => {
       description: String
       content: [HomepageBlock]
     }
-  `)
 
-  // CMS-specific types for Homepage
-
-  //^^ not sure what that means  --- everything not on homepage below
-  /*
- type SanityNeighborhoodsPage implements Node & NeighborhoodsPage {
-      id: ID!
-      title: String
-      description: String
-      image: HomepageImage @link(by: "id", from: "image.asset._ref")
-      content: [HomepageBlock]
-    }
-
-
-    type SanityMeetTheTeam implements Node & MeetTheTeam {
-      id: ID!
-      title: String
-      description: String
-      image: HomepageImage @link(by: "id", from: "image.asset._ref")
-      content: [HomepageBlock]
-    }
-
-    type SanityTeamProfile implements Node & TeamProfile {
+    interface ContactInfo implements Node {
       id: ID!
       name: String
-      jobTitle: String
-      image: HomepageImage @link(by: "id", from: "image.asset._ref")
-      about: String
-      mlsId: String
+      phone: String
+      email: String
+      socialLinks: [SocialLink]
     }
+  `)
 
-    type SanityTeamLeadership implements Node & TeamLeadership & HomepageBlock
-      @dontInfer {
-      id: ID!
-      heading: String
-      blocktype: String @blocktype
-      kicker: String
-      content: [TeamProfile]
-    }
-   type SanityNeighborhoodsHero implements Node & NeighborhoodsHero & HomepageBlock {
-      id: ID!
-      blocktype: String @blocktype
-      heading: String!
-      image: HomepageImage @link(by: "id", from: "image.asset._ref")
-      text: String
-    }
-        interface SanityTitleWithText implements Node & TitleWithText & HomepageBlock {
-      id: ID!
-      blocktype: String @blocktype
-      title: String
-      kicker: String
-      description: String
-    }
-
-  */
+  
   actions.createTypes(/* GraphQL */ `
     type SanityHomepageLink implements Node & HomepageLink {
       id: ID!
@@ -544,6 +436,14 @@ exports.createSchemaCustomization = async ({ actions }) => {
       content: [HomepageBlock]
     }
 
+    type SanityContactInfo implements Node & ContactInfo {
+        id: ID!
+        name: String
+        phone: String
+        email: String
+        socialLinks: [SocialLink]
+    }
+
     type SanityTeamProfile implements Node & TeamProfile {
       id: ID!
       name: String
@@ -561,6 +461,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       kicker: String
       content: [TeamProfile]
     }
+
     type SanityPropertyManagmentPage implements Node & PropertyManagmentPage {
       id: ID!
       title: String

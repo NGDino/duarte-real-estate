@@ -40,6 +40,7 @@ import neighborhoodsPage from "./neighborhoodsPage"
 import neighborhoodsHero from "./neighborhoodsHero"
 
 import propertyManagmentPage from "./propertyManagmentPage"
+import contactInfo from "./contactInfo"
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -50,8 +51,7 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   //has everything 
   types: schemaTypes.concat([
-
-    //not these
+    contactInfo,
     homepage,
     imageType,
     homepageLink,
