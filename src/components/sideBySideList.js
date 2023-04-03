@@ -1,26 +1,17 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import {
-  Container,
-  Section,
-  Text,
-  SuperHeading,
-  Box,
-  Flex,
-  FlexList,
-} from "./ui"
-import * as styles from "./about-hero.css";
+import { Container, Text, Box, Flex } from "./ui"
 
-import { imageTextSwitch, sideImage } from "./ui.css";
+import { imageTextSwitch, sideImage, sideItem } from "./ui.css"
 
 const ImageDiv = ({ image }) => {
   return (
-    <Box width="half"  padding={4}>
+    <Box width="half" padding={4}>
       <GatsbyImage
         alt="house or something"
         image={getImage(image.gatsbyImageData)}
-       className ={sideImage}
+        className={sideImage}
       />
     </Box>
   )
@@ -38,19 +29,16 @@ const TextDiv = (props) => {
 
 const SideBySideItem = (props) => {
   return (
-    <Box center>
+    <Box center className={sideItem}>
       {props.idx % 2 === 0 ? (
         <Flex responsive center className={imageTextSwitch}>
           <ImageDiv image={props.image} />
           <TextDiv {...props} />
         </Flex>
       ) : (
-        <Flex responsive center >
-        
-          <TextDiv {...props}  id='text2'/> 
-          <ImageDiv image={props.image} id='image2'/>
-
-      
+        <Flex responsive center>
+          <TextDiv {...props} id="text2" />
+          <ImageDiv image={props.image} id="image2" />
         </Flex>
       )}
     </Box>

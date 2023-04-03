@@ -7,7 +7,7 @@ export default function BrandLogo() {
 
   <StaticImage
     src='../images/davidLogo.png'
-    width={100}
+    width={120}
     // quality={90}
     alt="Duarte Family Real Estate Logo"
   />
